@@ -1,0 +1,1225 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/qehis6",
+    "id": "qehis6",
+    "slide": 1,
+    "layoutId": "a367afae-241e-4c43-80d3-d20051566319",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Aptos",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a367afae-241e-4c43-80d3-d20051566319",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F4EE",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwfyxobm",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#101827",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obm58z25",
+      "id": "3",
+      "bbox": [
+        58,
+        54,
+        5,
+        60
+      ],
+      "geometry": "rect",
+      "fillColor": "#C47F2C",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zed8v6ps",
+      "id": "4",
+      "bbox": [
+        78,
+        56,
+        360,
+        18
+      ],
+      "geometry": "rect",
+      "text": "KICKS CREW ME",
+      "textPreview": "KICKS CREW ME",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "fontSize": 10,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "KICKS CREW ME"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "KICKS CREW ME",
+          "runs": [
+            {
+              "index": 1,
+              "text": "KICKS CREW ME",
+              "fontSize": 10,
+              "typeface": "Aptos",
+              "color": "#C9D0DA",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "5",
+      "bbox": [
+        78,
+        86,
+        520,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Weekly performance report | Apr 27-May 03, 2026",
+      "textPreview": "Weekly performance report | Apr 27-May 03, 2026",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "fontSize": 10,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Weekly performance report | Apr 27-May 03, 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Weekly performance report | Apr 27-May 03, 2026",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Weekly performance report | Apr 27-May 03, 2026",
+              "fontSize": 10,
+              "typeface": "Aptos",
+              "color": "#C9D0DA"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "6",
+      "bbox": [
+        58,
+        164,
+        650,
+        178
+      ],
+      "geometry": "rect",
+      "text": "Strong absolute return,\nbut efficiency softened\nas spend rose.",
+      "textPreview": "Strong absolute return, | but efficiency softened | as spend rose.",
+      "resolvedFontSize": 41,
+      "resolvedTextStyle": {
+        "fontSize": 41,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Strong absolute return,"
+          },
+          {
+            "index": 2,
+            "text": "but efficiency softened"
+          },
+          {
+            "index": 3,
+            "text": "as spend rose."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Strong absolute return,",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Strong absolute return,",
+              "fontSize": 41,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "but efficiency softened",
+          "runs": [
+            {
+              "index": 1,
+              "text": "but efficiency softened",
+              "fontSize": 41,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "text": "as spend rose.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "as spend rose.",
+              "fontSize": 41,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "7",
+      "bbox": [
+        760,
+        180,
+        398,
+        128
+      ],
+      "geometry": "rect",
+      "text": "Blended paid ROAS stayed above target at 10.16x, while CPO held under the $22 target. The issue is momentum: spend grew 8.0% WoW while platform revenue slipped 1.0%, leaving the week blocked for publishing until Shopify Admin reconciliation clears.",
+      "textPreview": "Blended paid ROAS stayed above target at 10.16x, while CPO held under the $22 target. The issue is momentum: spend grew 8.0% WoW while pl...",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Blended paid ROAS stayed above target at 10.16x, while CPO"
+          },
+          {
+            "index": 2,
+            "text": "held under the $22 target. The issue is momentum: spend grew"
+          },
+          {
+            "index": 3,
+            "text": "8.0% WoW while platform revenue slipped 1.0%, leaving the"
+          },
+          {
+            "index": 4,
+            "text": "week blocked for publishing until Shopify Admin reconciliation"
+          },
+          {
+            "index": 5,
+            "text": "clears."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Blended paid ROAS stayed above target at 10.16x, while CPO held under the $22 target. The issue is momentum: spend grew 8.0% WoW while platform revenue slipped 1.0%, leaving the week blocked for publishing until Shopify Admin reconciliation clears.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Blended paid ROAS stayed above target at 10.16x, while CPO held under the $22 target. The issue is momentum: spend grew 8.0% WoW while platform revenue slipped 1.0%, leaving the week blocked for publishing until Shopify Admin reconciliation clears.",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#D9E2EF"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z61032ls",
+      "id": "8",
+      "bbox": [
+        58,
+        446,
+        260,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E6DED2",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al87ed8b",
+      "id": "9",
+      "bbox": [
+        58,
+        446,
+        4,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#C47F2C",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3q5o7qp",
+      "id": "10",
+      "bbox": [
+        76,
+        462,
+        230,
+        16
+      ],
+      "geometry": "rect",
+      "text": "BLENDED SPEND",
+      "textPreview": "BLENDED SPEND",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLENDED SPEND"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLENDED SPEND",
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLENDED SPEND",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/donyd0z6",
+      "id": "11",
+      "bbox": [
+        76,
+        484,
+        230,
+        36
+      ],
+      "geometry": "rect",
+      "text": "$14,046.93",
+      "textPreview": "$14,046.93",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$14,046.93"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$14,046.93",
+          "runs": [
+            {
+              "index": 1,
+              "text": "$14,046.93",
+              "fontSize": 27,
+              "typeface": "Georgia",
+              "color": "#C47F2C",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2x4nap4r",
+      "id": "12",
+      "bbox": [
+        76,
+        524,
+        230,
+        28
+      ],
+      "geometry": "rect",
+      "text": "+7.99% WoW",
+      "textPreview": "+7.99% WoW",
+      "resolvedFontSize": 9.51,
+      "resolvedTextStyle": {
+        "fontSize": 9.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "+7.99% WoW"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "+7.99% WoW",
+          "runs": [
+            {
+              "index": 1,
+              "text": "+7.99% WoW",
+              "fontSize": 9.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vixczed8",
+      "id": "13",
+      "bbox": [
+        342,
+        446,
+        260,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E6DED2",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kre1w7mp",
+      "id": "14",
+      "bbox": [
+        342,
+        446,
+        4,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#176B87",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcbulwva",
+      "id": "15",
+      "bbox": [
+        360,
+        462,
+        230,
+        16
+      ],
+      "geometry": "rect",
+      "text": "AD PLATFORM REVENUE",
+      "textPreview": "AD PLATFORM REVENUE",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AD PLATFORM REVENUE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AD PLATFORM REVENUE",
+          "runs": [
+            {
+              "index": 1,
+              "text": "AD PLATFORM REVENUE",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6psfil0r",
+      "id": "16",
+      "bbox": [
+        360,
+        484,
+        230,
+        36
+      ],
+      "geometry": "rect",
+      "text": "$142,707.96",
+      "textPreview": "$142,707.96",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$142,707.96"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$142,707.96",
+          "runs": [
+            {
+              "index": 1,
+              "text": "$142,707.96",
+              "fontSize": 27,
+              "typeface": "Georgia",
+              "color": "#176B87",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/val87ed8",
+      "id": "17",
+      "bbox": [
+        360,
+        524,
+        230,
+        28
+      ],
+      "geometry": "rect",
+      "text": "-0.95% WoW",
+      "textPreview": "-0.95% WoW",
+      "resolvedFontSize": 9.51,
+      "resolvedTextStyle": {
+        "fontSize": 9.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "-0.95% WoW"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "-0.95% WoW",
+          "runs": [
+            {
+              "index": 1,
+              "text": "-0.95% WoW",
+              "fontSize": 9.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/knih4byh",
+      "id": "18",
+      "bbox": [
+        626,
+        446,
+        260,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E6DED2",
+      "lineWidth": 1
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d8bat47y",
+      "id": "19",
+      "bbox": [
+        626,
+        446,
+        4,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#168A55",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4vmtwra",
+      "id": "20",
+      "bbox": [
+        644,
+        462,
+        230,
+        16
+      ],
+      "geometry": "rect",
+      "text": "BLENDED ROAS",
+      "textPreview": "BLENDED ROAS",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLENDED ROAS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLENDED ROAS",
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLENDED ROAS",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oj2t83it",
+      "id": "21",
+      "bbox": [
+        644,
+        484,
+        230,
+        36
+      ],
+      "geometry": "rect",
+      "text": "10.16x",
+      "textPreview": "10.16x",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10.16x"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10.16x",
+          "runs": [
+            {
+              "index": 1,
+              "text": "10.16x",
+              "fontSize": 27,
+              "typeface": "Georgia",
+              "color": "#168A55",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vy90je9c",
+      "id": "22",
+      "bbox": [
+        644,
+        524,
+        230,
+        28
+      ],
+      "geometry": "rect",
+      "text": "-8.30% WoW, still above 7x",
+      "textPreview": "-8.30% WoW, still above 7x",
+      "resolvedFontSize": 9.51,
+      "resolvedTextStyle": {
+        "fontSize": 9.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "-8.30% WoW, still above 7x"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "-8.30% WoW, still above 7x",
+          "runs": [
+            {
+              "index": 1,
+              "text": "-8.30% WoW, still above 7x",
+              "fontSize": 9.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6dcbulwv",
+      "id": "23",
+      "bbox": [
+        910,
+        446,
+        260,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E6DED2",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsji5sne",
+      "id": "24",
+      "bbox": [
+        910,
+        446,
+        4,
+        118
+      ],
+      "geometry": "rect",
+      "fillColor": "#168A55",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7qpg3ex",
+      "id": "25",
+      "bbox": [
+        928,
+        462,
+        230,
+        16
+      ],
+      "geometry": "rect",
+      "text": "BLENDED CPO",
+      "textPreview": "BLENDED CPO",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BLENDED CPO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BLENDED CPO",
+          "runs": [
+            {
+              "index": 1,
+              "text": "BLENDED CPO",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vmtwra5g",
+      "id": "26",
+      "bbox": [
+        928,
+        484,
+        230,
+        36
+      ],
+      "geometry": "rect",
+      "text": "$20.83",
+      "textPreview": "$20.83",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$20.83"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$20.83",
+          "runs": [
+            {
+              "index": 1,
+              "text": "$20.83",
+              "fontSize": 27,
+              "typeface": "Georgia",
+              "color": "#168A55",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61032lsz",
+      "id": "27",
+      "bbox": [
+        928,
+        524,
+        230,
+        28
+      ],
+      "geometry": "rect",
+      "text": "+11.75% WoW, still below $22",
+      "textPreview": "+11.75% WoW, still below $22",
+      "resolvedFontSize": 9.51,
+      "resolvedTextStyle": {
+        "fontSize": 9.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "+11.75% WoW, still below $22"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "+11.75% WoW, still below $22",
+          "runs": [
+            {
+              "index": 1,
+              "text": "+11.75% WoW, still below $22",
+              "fontSize": 9.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dg7adsji",
+      "id": "28",
+      "bbox": [
+        58,
+        681,
+        1164,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9D2C7",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovahoza1",
+      "id": "29",
+      "bbox": [
+        58,
+        690,
+        860,
+        14
+      ],
+      "geometry": "rect",
+      "text": "Status: blocked pending Shopify Admin reconciliation before Slack publishing",
+      "textPreview": "Status: blocked pending Shopify Admin reconciliation before Slack publishing",
+      "resolvedFontSize": 7.51,
+      "resolvedTextStyle": {
+        "fontSize": 7.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Status: blocked pending Shopify Admin reconciliation before Slack publishing"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Status: blocked pending Shopify Admin reconciliation before Slack publishing",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Status: blocked pending Shopify Admin reconciliation before Slack publishing",
+              "fontSize": 7.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yxobm58z",
+      "id": "30",
+      "bbox": [
+        1180,
+        686,
+        42,
+        18
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "right"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 11,
+              "typeface": "Georgia",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,12 @@
+{
+  "name": "kickscrew-me-creative-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify-ready KICKS CREW ME creative intelligence dashboard.",
+  "scripts": {
+    "build": "python scripts/refresh_competitor_platform_feeds.py && node scripts/build-netlify-data.mjs",
+    "dev": "netlify dev",
+    "refresh": "python scripts/refresh_competitor_platform_feeds.py && node scripts/build-netlify-data.mjs"
+  },
+  "dependencies": {}
+}

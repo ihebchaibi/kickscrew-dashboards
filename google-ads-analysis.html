@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KICKS CREW — Google Ads Performance | GCC Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #111111;
+    --bg-3: #1a1a1a;
+    --line: rgba(255,255,255,0.08);
+    --line-2: rgba(255,255,255,0.15);
+    --text: #f5f5f5;
+    --text-2: #a0a0a0;
+    --text-3: #666;
+    --accent: #ff3c00;
+    --accent-glow: rgba(255, 60, 0, 0.15);
+    --green: #00d084;
+    --yellow: #ffb800;
+    --red: #ff3b3b;
+    --purple: #b18cff;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at top right, rgba(255, 60, 0, 0.08), transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(177, 140, 255, 0.05), transparent 50%),
+      var(--bg);
+    background-attachment: fixed;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 48px 32px 96px; }
+
+  /* HEADER */
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 32px; border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), #ff6a00);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk'; font-weight: 800; font-size: 20px; color: white;
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name {
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub { font-size: 12px; color: var(--text-3); font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; }
+  .meta { text-align: right; font-size: 13px; color: var(--text-2); }
+  .meta strong { color: var(--text); font-weight: 600; }
+
+  /* TITLE BLOCK */
+  .title-block { margin-bottom: 64px; }
+  .tag {
+    display: inline-block; padding: 6px 12px; border-radius: 999px;
+    background: var(--accent-glow); color: var(--accent);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 20px;
+    border: 1px solid rgba(255, 60, 0, 0.2);
+  }
+  h1 {
+    font-family: 'Space Grotesk'; font-size: 56px; font-weight: 700;
+    line-height: 1; letter-spacing: -0.03em; margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--accent); }
+  .subtitle {
+    font-size: 19px; color: var(--text-2); font-weight: 400;
+    max-width: 720px; line-height: 1.5;
+  }
+
+  /* SECTIONS */
+  section { margin-bottom: 64px; }
+  h2 {
+    font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-3); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2::before {
+    content: ''; width: 6px; height: 6px; background: var(--accent);
+    border-radius: 50%; box-shadow: 0 0 12px var(--accent);
+  }
+  h3 {
+    font-family: 'Space Grotesk'; font-size: 26px; font-weight: 600;
+    margin-bottom: 16px; letter-spacing: -0.015em;
+  }
+
+  /* HEADLINE METRICS */
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .metric {
+    background: linear-gradient(180deg, var(--bg-2), var(--bg-3));
+    border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .metric:hover { transform: translateY(-2px); border-color: var(--line-2); }
+  .metric::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-2), transparent);
+  }
+  .metric .label {
+    font-size: 11px; color: var(--text-3); text-transform: uppercase;
+    letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px;
+  }
+  .metric .value {
+    font-family: 'Space Grotesk'; font-size: 36px; font-weight: 700;
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .metric .sub {
+    font-size: 12px; color: var(--text-2); margin-top: 8px;
+  }
+  .metric.hero { background: linear-gradient(135deg, #1a0800, #0a0a0a); border-color: rgba(255,60,0,0.2); }
+  .metric.hero .value { color: var(--accent); }
+
+  /* CAMPAIGN TABLE */
+  .table-wrap {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 16px; overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead {
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    text-align: left; padding: 16px 20px; font-size: 11px;
+    font-weight: 600; color: var(--text-3); text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  th.num, td.num { text-align: right; }
+  td {
+    padding: 18px 20px; font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  td.num { font-family: 'Space Grotesk'; font-weight: 600; letter-spacing: -0.01em; }
+  .campaign-name { font-weight: 500; }
+  .market {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 999px; font-size: 11px;
+    font-weight: 600; border: 1px solid var(--line-2);
+  }
+  .m-uae { background: rgba(0, 168, 89, 0.1); color: #00d084; border-color: rgba(0, 168, 89, 0.3); }
+  .m-ksa { background: rgba(0, 122, 255, 0.1); color: #4da3ff; border-color: rgba(0, 122, 255, 0.3); }
+  .m-kw { background: rgba(255, 184, 0, 0.1); color: var(--yellow); border-color: rgba(255, 184, 0, 0.3); }
+  .roas-cell {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 13px;
+  }
+  .roas-great { background: rgba(0, 208, 132, 0.12); color: var(--green); }
+  .roas-good { background: rgba(0, 208, 132, 0.08); color: #6ee0b0; }
+  .roas-okay { background: rgba(255, 184, 0, 0.12); color: var(--yellow); }
+  .roas-bad { background: rgba(255, 59, 59, 0.12); color: var(--red); }
+  .total-row { background: rgba(255, 60, 0, 0.04); }
+  .total-row td { font-weight: 700; border-top: 2px solid var(--line-2); }
+  .total-row .campaign-name { color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; }
+
+  /* INSIGHTS */
+  .insights-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  }
+  .insight {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 14px; padding: 28px;
+    position: relative;
+  }
+  .insight-label {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot.win { background: var(--green); box-shadow: 0 0 10px var(--green); }
+  .dot.watch { background: var(--yellow); box-shadow: 0 0 10px var(--yellow); }
+  .dot.fix { background: var(--red); box-shadow: 0 0 10px var(--red); }
+  .dot.opportunity { background: var(--purple); box-shadow: 0 0 10px var(--purple); }
+  .insight h4 {
+    font-family: 'Space Grotesk'; font-size: 20px; font-weight: 600;
+    margin-bottom: 10px; letter-spacing: -0.01em;
+  }
+  .insight p { color: var(--text-2); font-size: 14px; }
+  .insight strong { color: var(--text); font-weight: 600; }
+
+  /* RECOMMENDATIONS */
+  .rec-list { display: flex; flex-direction: column; gap: 16px; }
+  .rec {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 14px; padding: 28px;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 24px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .rec:hover { border-color: var(--line-2); }
+  .rec-num {
+    font-family: 'Space Grotesk'; font-size: 42px; font-weight: 700;
+    color: var(--accent); line-height: 1; letter-spacing: -0.03em;
+  }
+  .rec-body h4 {
+    font-family: 'Space Grotesk'; font-size: 19px; font-weight: 600;
+    margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .rec-body p { color: var(--text-2); font-size: 14px; line-height: 1.6; }
+  .rec-body strong { color: var(--text); }
+  .priority {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 5px 10px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  .p-high { background: rgba(255, 59, 59, 0.12); color: var(--red); border: 1px solid rgba(255, 59, 59, 0.3); }
+  .p-med { background: rgba(255, 184, 0, 0.12); color: var(--yellow); border: 1px solid rgba(255, 184, 0, 0.3); }
+  .p-low { background: rgba(100, 100, 100, 0.15); color: var(--text-2); border: 1px solid var(--line-2); }
+
+  /* BUDGET TABLE */
+  .budget-table td { padding: 16px 20px; }
+  .change {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 13px;
+  }
+  .change.up { color: var(--green); }
+  .change.down { color: var(--red); }
+  .change.flat { color: var(--text-2); }
+  .change.pause {
+    background: rgba(255, 59, 59, 0.12); color: var(--red);
+    padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(255, 59, 59, 0.3);
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: var(--text-3);
+  }
+  .footer .disclaimer { max-width: 480px; }
+
+  /* ARABIC PHRASE ACCENT */
+  .arabic-accent {
+    font-size: 13px; color: var(--accent); font-weight: 500;
+    direction: rtl; display: inline-block; margin-top: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .insights-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 40px; }
+    .rec { grid-template-columns: 1fr; gap: 12px; }
+    .container { padding: 32px 20px 64px; }
+    .table-wrap { overflow-x: auto; }
+    table { min-width: 700px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">K</div>
+      <div class="brand-text">
+        <span class="brand-name">KICKS CREW — Middle East</span>
+        <span class="brand-sub">Google Ads · GCC Performance</span>
+      </div>
+    </div>
+    <div class="meta">
+      <strong>Weekly Report</strong><br>
+      Apr 15 – Apr 22, 2026<br>
+      <span style="color:var(--text-3)">Account: 368-224-2765 · Currency: USD</span>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <span class="tag">Performance · Last 7 Days</span>
+    <h1>GCC Paid Search<br><span class="accent">Portfolio Review.</span></h1>
+    <p class="subtitle">A $5.9K weekly spend returning $68K in revenue at 11.4x ROAS — but the mix is unbalanced. Here's what's winning, what's hiding inefficiency, and where to move next.</p>
+  </div>
+
+  <!-- HEADLINE METRICS -->
+  <section>
+    <h2>The Headline</h2>
+    <div class="metrics-grid">
+      <div class="metric hero">
+        <div class="label">Revenue</div>
+        <div class="value">$68,065</div>
+        <div class="sub">Last 7 days · GCC total</div>
+      </div>
+      <div class="metric">
+        <div class="label">Spend</div>
+        <div class="value">$5,975</div>
+        <div class="sub">4 active campaigns</div>
+      </div>
+      <div class="metric">
+        <div class="label">ROAS</div>
+        <div class="value">11.39x</div>
+        <div class="sub">Blended portfolio</div>
+      </div>
+      <div class="metric">
+        <div class="label">CPO</div>
+        <div class="value">$18.75</div>
+        <div class="sub">318.62 conversions · $213 AOV</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN PERFORMANCE TABLE -->
+  <section>
+    <h2>Campaign Breakdown</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Market</th>
+            <th class="num">Spend</th>
+            <th class="num">Conv</th>
+            <th class="num">CPO</th>
+            <th class="num">Revenue</th>
+            <th class="num">ROAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="campaign-name">AE-Sales-Performance-Max #NEW</td>
+            <td><span class="market m-uae">🇦🇪 UAE</span></td>
+            <td class="num">$2,794</td>
+            <td class="num">156.75</td>
+            <td class="num">$17.83</td>
+            <td class="num">$34,041</td>
+            <td class="num"><span class="roas-cell roas-great">12.18x</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">KicksCrew – Performance max – SA</td>
+            <td><span class="market m-ksa">🇸🇦 KSA</span></td>
+            <td class="num">$1,584</td>
+            <td class="num">97.57</td>
+            <td class="num">$16.24</td>
+            <td class="num">$20,674</td>
+            <td class="num"><span class="roas-cell roas-great">13.05x</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">KicksCrew – Shop Conversion – SA</td>
+            <td><span class="market m-ksa">🇸🇦 KSA</span></td>
+            <td class="num">$1,091</td>
+            <td class="num">49.34</td>
+            <td class="num">$22.11</td>
+            <td class="num">$10,098</td>
+            <td class="num"><span class="roas-cell roas-good">9.26x</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">KicksCrew – Performance max – KU</td>
+            <td><span class="market m-kw">🇰🇼 Kuwait</span></td>
+            <td class="num">$506</td>
+            <td class="num">14.96</td>
+            <td class="num">$33.80</td>
+            <td class="num">$3,252</td>
+            <td class="num"><span class="roas-cell roas-bad">6.43x</span></td>
+          </tr>
+          <tr class="total-row">
+            <td class="campaign-name">Total</td>
+            <td><span class="market">GCC</span></td>
+            <td class="num">$5,975</td>
+            <td class="num">318.62</td>
+            <td class="num">$18.75</td>
+            <td class="num">$68,065</td>
+            <td class="num"><span class="roas-cell roas-great">11.39x</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section>
+    <h2>What The Data Is Telling Us</h2>
+    <div class="insights-grid">
+
+      <div class="insight">
+        <div class="insight-label"><span class="dot win"></span>The Winner</div>
+        <h4>KSA PMax is underfunded</h4>
+        <p><strong>13.05x ROAS</strong>, cheapest CPO at <strong>$16.24</strong>, highest CVR at <strong>1.09%</strong> — nearly 2× UAE, 3× Kuwait. Yet it only gets 27% of spend. Clear headroom to scale.</p>
+      </div>
+
+      <div class="insight">
+        <div class="insight-label"><span class="dot watch"></span>The Workhorse</div>
+        <h4>UAE PMax: volume, not efficiency</h4>
+        <p>Drives <strong>50% of revenue</strong> on <strong>47% of spend</strong>. But CVR is only 0.68% on 23K clicks — <strong>~22,800 people clicked and didn't buy</strong>. Audience or landing-page leakage, not creative.</p>
+      </div>
+
+      <div class="insight">
+        <div class="insight-label"><span class="dot opportunity"></span>The Overlap</div>
+        <h4>KSA Shop Conv vs. KSA PMax</h4>
+        <p>Same market, same shopper, same product. But PMax wins on every metric: <strong>13.05x vs. 9.26x ROAS</strong>, <strong>$16 vs. $22 CPO</strong>. Consolidation opportunity.</p>
+      </div>
+
+      <div class="insight">
+        <div class="insight-label"><span class="dot fix"></span>The Drag</div>
+        <h4>Kuwait PMax is underperforming</h4>
+        <p>Worst on every metric: <strong>$33.80 CPO</strong>, <strong>6.43x ROAS</strong>, <strong>0.35% CVR</strong>. Small spend limits damage, but it pulls blended ROAS down. Rebuild or pause.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section>
+    <h2>Recommendations · In Priority Order</h2>
+    <div class="rec-list">
+
+      <div class="rec">
+        <div class="rec-num">01</div>
+        <div class="rec-body">
+          <h4>Shift KSA Shop Conv → KSA PMax</h4>
+          <p>Cut Shop Conversion by <strong>50%</strong> and redirect into PMax. Monitor for 7 days — if CPO and ROAS hold, kill Shop Conv entirely. If PMax holds 13x on the extra $1,091/week, that's an additional <strong>~$14K revenue</strong> vs. current ~$10K.</p>
+        </div>
+        <span class="priority p-high">Priority: High</span>
+      </div>
+
+      <div class="rec">
+        <div class="rec-num">02</div>
+        <div class="rec-body">
+          <h4>Scale KSA PMax by 30–50%</h4>
+          <p>Push weekly budget from <strong>$1,584 → $2,200–2,400</strong>. Your best-performing campaign is starved. Saudi is the market where you have the most efficient auction, the highest CVR, and an Arabic-first audience that's converting. Lean into it.</p>
+        </div>
+        <span class="priority p-high">Priority: High</span>
+      </div>
+
+      <div class="rec">
+        <div class="rec-num">03</div>
+        <div class="rec-body">
+          <h4>Audit UAE PMax conversion path</h4>
+          <p>Do <em>not</em> cut budget. Fix leakage first: <strong>(a)</strong> landing page speed + Arabic experience, <strong>(b)</strong> whether PMax is pulling low-intent YouTube / Display traffic, <strong>(c)</strong> feed optimization with Arabic product titles. Scale only after fixing.</p>
+        </div>
+        <span class="priority p-med">Priority: Medium</span>
+      </div>
+
+      <div class="rec">
+        <div class="rec-num">04</div>
+        <div class="rec-body">
+          <h4>Kuwait: pause, then relaunch</h4>
+          <p>Pause for 2 weeks. Reallocate the $506 to KSA PMax. Plan a May relaunch with Kuwait-specific creative — Arabic-first, Kuwaiti-dialect hooks, Kuwait-only signals. Don't just let it bleed budget on generic GCC assets.</p>
+        </div>
+        <span class="priority p-med">Priority: Medium</span>
+      </div>
+
+      <div class="rec">
+        <div class="rec-num">05</div>
+        <div class="rec-body">
+          <h4>Creative: Arabic-first on KSA</h4>
+          <p>Your KSA audience converts <strong>60% better</strong> than UAE. Match the brand voice you already use on social in PMax assets — youth-focused, Saudi dialect, hype-driven. <span class="arabic-accent">وصل الجديد 🔥 · لا تفوت دروب اليوم</span></p>
+        </div>
+        <span class="priority p-low">Priority: Ongoing</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUDGET REALLOCATION -->
+  <section>
+    <h2>Suggested Budget Reallocation · Next 7 Days</h2>
+    <div class="table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th class="num">Current</th>
+            <th class="num">Suggested</th>
+            <th class="num">Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="campaign-name">🇦🇪 UAE PMax</td>
+            <td class="num">$2,794</td>
+            <td class="num">$2,794</td>
+            <td class="num"><span class="change flat">— Hold · Audit first</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">🇸🇦 KSA PMax</td>
+            <td class="num">$1,584</td>
+            <td class="num">$2,300</td>
+            <td class="num"><span class="change up">▲ +45%</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">🇸🇦 KSA Shop Conversion</td>
+            <td class="num">$1,091</td>
+            <td class="num">$545</td>
+            <td class="num"><span class="change down">▼ −50%</span></td>
+          </tr>
+          <tr>
+            <td class="campaign-name">🇰🇼 Kuwait PMax</td>
+            <td class="num">$506</td>
+            <td class="num">$0</td>
+            <td class="num"><span class="change pause">PAUSE</span></td>
+          </tr>
+          <tr class="total-row">
+            <td class="campaign-name">Total</td>
+            <td class="num">$5,975</td>
+            <td class="num">$5,639</td>
+            <td class="num"><span class="change down">▼ −6%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:20px; color:var(--text-2); font-size:14px; max-width:760px;">
+      <strong style="color:var(--text);">Net effect:</strong> slightly less total spend, concentrated on the two strongest campaigns. If KSA PMax holds ROAS above 10x at the new budget, projected revenue stays flat-to-up while efficiency improves. Revisit in 7 days.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="disclaimer">
+      Source: Windsor.ai → Google Ads · Account 368-224-2765 · Currency converted from HKD at 7.80 peg.
+      Figures are last-7-days rolling. Conversion values reflect Google Ads reported attribution.
+    </div>
+    <div style="text-align:right;">
+      <strong style="color:var(--text); font-family:'Space Grotesk';">KICKS CREW ME</strong><br>
+      Marketing · Generated Apr 22, 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

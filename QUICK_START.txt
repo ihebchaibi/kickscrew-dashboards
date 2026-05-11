@@ -1,0 +1,186 @@
+================================================================================
+KICKS CREW ME CREATIVE INTELLIGENCE DASHBOARD — QUICK START
+================================================================================
+
+STATUS: Ready for real-data connection ✅
+
+WHAT TO DO THIS WEEK:
+================================================================================
+
+1. EXPORT PLATFORM DATA (~1 hour total)
+
+   TikTok:
+   • Plugin runs daily at 6:10 AM ME (already configured)
+   • Exports to: data/raw/tiktok-ads-library-export.json
+   ✓ No action needed
+
+   Meta (15 min):
+   • Meta Ads Manager → Ads Library → All Ads
+   • Filter: GCC countries, last 90 days
+   • Export as JSON → data/raw/meta-ads-library-export.json
+
+   Google (15 min):
+   • Google Ads Library (adslib.google.com)
+   • Filter: GCC countries, last 90 days
+   • Search: StockX, GOAT, Stadium Goods, Namshi, SHEIN, OUNASS
+   • Export as JSON → data/raw/google-ads-library-export.json
+
+   Snapchat (15 min):
+   • Snapchat Ads Manager (business.snapchat.com)
+   • Creatives/Ad Library, filter: last 90 days
+   • Export as JSON → data/raw/snapchat-ads-library-export.json
+
+2. TEST LOCALLY (10 min)
+
+   cd "KICKS CREW ME – Marketing & Content Assistant"
+   python scripts/refresh_competitor_platform_feeds.py
+   cd netlify-drop-v2
+   node scripts/build-netlify-data.mjs
+   python -m http.server 8000
+   # Open http://localhost:8000/index.html
+
+3. SET NETLIFY ENV VARS (5 min)
+
+   Netlify UI → Site settings → Build & deploy → Environment
+
+   Add these:
+   TIKTOK_FEED_URL = https://your-tiktok-plugin-endpoint/api/creatives/latest.json
+   META_FEED_URL = https://api.facebook.com/ads/export/meta
+   GOOGLE_FEED_URL = https://adslib.google.com/api/exports/google
+   SNAPCHAT_FEED_URL = https://api.snapchat.com/ads/export
+   PYTHON_VERSION = 3.11
+
+4. DEPLOY (automatic)
+
+   git push origin main
+   # Netlify auto-deploys
+   # Wait 2-3 min for build to complete
+   # Open https://your-site.netlify.app/
+
+5. VERIFY (5 min)
+
+   ✓ Dashboard loads
+   ✓ Badges show "Live" (not "Embedded sample")
+   ✓ Metric cards display data
+   ✓ No console errors
+   ✓ All filters work
+
+TOTAL TIME: ~2 hours end-to-end
+
+================================================================================
+FILES CREATED / UPDATED
+================================================================================
+
+NEW DOCUMENTATION:
+✓ PLATFORM_DATA_SOURCES_GUIDE.md     — Per-platform setup details
+✓ PLATFORM_CONNECTION_CHECKLIST.md   — Step-by-step action items
+✓ NETLIFY_SETUP.md                   — Netlify deployment guide
+✓ IMPLEMENTATION_COMPLETE.md         — Full overview + architecture
+✓ QUICK_START.txt                    — This file
+
+CONFIGURATION UPDATED:
+✓ data/raw/platform-feed-sources.json   — Now uses env vars + fallbacks
+✓ netlify-drop-v2/netlify.toml          — Build env vars added
+✓ netlify-drop-v2/scripts/build-netlify-data.mjs — Platform feed fetching
+
+READY TO USE (no changes):
+✓ index.html                — Dashboard UI
+✓ tiktok-dashboard.js       — Dashboard logic
+✓ tiktok-dashboard.css      — Styling
+✓ tiktok-competitor-data.js — Sample data + refresh metadata
+✓ scripts/refresh_competitor_platform_feeds.py — Feed refresh script
+
+================================================================================
+KEY DATES & TIMES
+================================================================================
+
+6:10 AM ME (Daily)
+  └─ TikTok plugin exports creatives
+     └─ Saves to: data/raw/tiktok-ads-library-export.json
+
+6:15 AM ME (Daily, optional)
+  └─ Automated Netlify deploy (if git push triggered)
+     └─ Fetches all 4 platform feeds in parallel
+     └─ Updates dashboard
+
+On Demand
+  └─ Manual deploy in Netlify UI
+  └─ Or: git push to trigger build
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+Dashboard is fully "Live" when all of these are true:
+
+[ ] All 4 badges show "Live" (not "Embedded sample")
+[ ] Creative radar displays 8 competitor brands + KICKS CREW
+[ ] Comparison table has spend, ROAS, CPO columns
+[ ] Hook analysis shows first-3-sec hooks with rates
+[ ] Regional view breaks down by GCC country
+[ ] Briefs view generates recommendations
+[ ] Browser console: zero errors
+[ ] Load time: <2 seconds
+
+================================================================================
+QUICK TROUBLESHOOTING
+================================================================================
+
+Dashboard shows "Embedded sample"?
+  → Netlify env vars not set
+  → Check: Site settings → Build & deploy → Environment
+  → Add: TIKTOK_FEED_URL, META_FEED_URL, GOOGLE_FEED_URL, SNAPCHAT_FEED_URL
+
+Build fails in Netlify?
+  → Check: Netlify Deploy log
+  → Solution: Verify Python version = 3.11
+
+"404" or "Timeout" errors?
+  → Feed URL is wrong or endpoint is slow
+  → Verify URLs in Netlify env vars match platform exports
+
+JSON parsing error?
+  → Export file is invalid JSON
+  → Test: python -m json.tool data/raw/meta-ads-library-export.json
+
+================================================================================
+REFERENCE DOCUMENTS
+================================================================================
+
+For detailed platform setup:
+  → Read: PLATFORM_DATA_SOURCES_GUIDE.md
+
+For step-by-step actions:
+  → Read: PLATFORM_CONNECTION_CHECKLIST.md
+
+For Netlify deployment:
+  → Read: netlify-drop-v2/NETLIFY_SETUP.md
+
+For full architecture:
+  → Read: IMPLEMENTATION_COMPLETE.md
+
+For TikTok plugin:
+  → Read: TIKTOK_PLUGIN_DEPLOYMENT_READY.md
+
+================================================================================
+QUESTIONS?
+================================================================================
+
+Platform-specific setup:
+  → PLATFORM_DATA_SOURCES_GUIDE.md (sections 1-4)
+
+Netlify deployment issues:
+  → netlify-drop-v2/NETLIFY_SETUP.md (troubleshooting table)
+
+Dashboard UI/UX:
+  → KICKS_CREW_ME_TIKTOK_COMPETITOR_DASHBOARD_STATUS.md
+
+TikTok plugin:
+  → Contact JSU (handles OAuth, deployment)
+
+Data refresh automation:
+  → See IMPLEMENTATION_COMPLETE.md (Daily Refresh Flow section)
+
+================================================================================
+NEXT ACTION: Read PLATFORM_CONNECTION_CHECKLIST.md and start exporting data
+================================================================================

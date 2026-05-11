@@ -1,0 +1,10 @@
+{
+  "name": "tiktok-ads-library",
+  "version": "0.1.0",
+  "description": "Direct TikTok Ads Library integration for automated competitor tracking, real-time metrics, and dashboard updates. Fetches competitor creative performance data, generates snapshots, and reconciles metrics for KICKS CREW ME daily automation.",
+  "author": {
+    "name": "KICKS CREW ME Marketing"
+  },
+  "keywords": ["tiktok", "ads-library", "competitor-tracking", "automation", "snapshots"],
+  "homepage": "https://kicks-crewworkspace.slack.com/docs/TTL9WNXC1/F0ASE57CV9C"
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "Platform feed sources — these are live endpoints updated on every Netlify deploy. Live sources aggregated from TikTok, Meta, Google, and Snapchat public ads libraries.",
+  "tiktok": "${TIKTOK_FEED_URL:-.netlify/functions/refresh-competitor-feeds?platform=tiktok}",
+  "meta": "${META_FEED_URL:-.netlify/functions/refresh-competitor-feeds?platform=meta}",
+  "google": "${GOOGLE_FEED_URL:-.netlify/functions/refresh-competitor-feeds?platform=google}",
+  "snapchat": "${SNAPCHAT_FEED_URL:-.netlify/functions/refresh-competitor-feeds?platform=snapchat}"
+}

@@ -1,0 +1,1289 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/kph7jv",
+    "id": "kph7jv",
+    "slide": 6,
+    "layoutId": "a367afae-241e-4c43-80d3-d20051566319",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Aptos",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a367afae-241e-4c43-80d3-d20051566319",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ed8fc555-13b7-46d7-a13f-d087a667973a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0rqd4vmt",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F4EE",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6xkf6dc",
+      "id": "2",
+      "bbox": [
+        58,
+        44,
+        620,
+        18
+      ],
+      "geometry": "rect",
+      "text": "PUBLISHING GATE",
+      "textPreview": "PUBLISHING GATE",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "fontSize": 9,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PUBLISHING GATE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PUBLISHING GATE",
+          "runs": [
+            {
+              "index": 1,
+              "text": "PUBLISHING GATE",
+              "fontSize": 9,
+              "typeface": "Aptos",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/il0rqd4v",
+      "id": "3",
+      "bbox": [
+        58,
+        68,
+        42,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#176B87",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t47y1kre",
+      "id": "4",
+      "bbox": [
+        58,
+        86,
+        850,
+        88
+      ],
+      "geometry": "rect",
+      "text": "The report should not be published until Shopify Admin reconciliation clears.",
+      "textPreview": "The report should not be published until Shopify Admin reconciliation clears.",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "fontSize": 32,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The report should not be published until Shopify"
+          },
+          {
+            "index": 2,
+            "text": "Admin reconciliation clears."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The report should not be published until Shopify Admin reconciliation clears.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "The report should not be published until Shopify Admin reconciliation clears.",
+              "fontSize": 32,
+              "typeface": "Georgia",
+              "color": "#111827",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0je9cvix",
+      "id": "5",
+      "bbox": [
+        58,
+        174,
+        850,
+        42
+      ],
+      "geometry": "rect",
+      "text": "The paid and GA4 data is ready. The missing piece is ground-truth validation against Shopify Admin.",
+      "textPreview": "The paid and GA4 data is ready. The missing piece is ground-truth validation against Shopify Admin.",
+      "resolvedFontSize": 12.51,
+      "resolvedTextStyle": {
+        "fontSize": 12.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The paid and GA4 data is ready. The missing piece is ground-truth validation against Shopify Admin."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The paid and GA4 data is ready. The missing piece is ground-truth validation against Shopify Admin.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "The paid and GA4 data is ready. The missing piece is ground-truth validation against Shopify Admin.",
+              "fontSize": 12.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/byhgn29g",
+      "id": "6",
+      "bbox": [
+        78,
+        238,
+        474,
+        138
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF3F4",
+      "lineColor": "#D3E4E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idonyd0z",
+      "id": "7",
+      "bbox": [
+        96,
+        254,
+        438,
+        16
+      ],
+      "geometry": "rect",
+      "text": "WHY BLOCKED",
+      "textPreview": "WHY BLOCKED",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WHY BLOCKED"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WHY BLOCKED",
+          "runs": [
+            {
+              "index": 1,
+              "text": "WHY BLOCKED",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#B45309",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0bi9s36",
+      "id": "8",
+      "bbox": [
+        96,
+        278,
+        438,
+        84
+      ],
+      "geometry": "rect",
+      "text": "Windsor returned raw order-level rows with obvious zero-value and gift-card-like records. The required Shopify Admin reconciliation could not be completed in this session.",
+      "textPreview": "Windsor returned raw order-level rows with obvious zero-value and gift-card-like records. The required Shopify Admin reconciliation could...",
+      "resolvedFontSize": 12.51,
+      "resolvedTextStyle": {
+        "fontSize": 12.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Windsor returned raw order-level rows with obvious zero-value and gift-card-like"
+          },
+          {
+            "index": 2,
+            "text": "records. The required Shopify Admin reconciliation could not be completed in this"
+          },
+          {
+            "index": 3,
+            "text": "session."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Windsor returned raw order-level rows with obvious zero-value and gift-card-like records. The required Shopify Admin reconciliation could not be completed in this session.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Windsor returned raw order-level rows with obvious zero-value and gift-card-like records. The required Shopify Admin reconciliation could not be completed in this session.",
+              "fontSize": 12.51,
+              "typeface": "Aptos",
+              "color": "#111827"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fepkzup",
+      "id": "9",
+      "bbox": [
+        614,
+        238,
+        474,
+        138
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF3F4",
+      "lineColor": "#D3E4E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itgfmlkj",
+      "id": "10",
+      "bbox": [
+        632,
+        254,
+        438,
+        16
+      ],
+      "geometry": "rect",
+      "text": "REQUIRED GATE",
+      "textPreview": "REQUIRED GATE",
+      "resolvedFontSize": 8.51,
+      "resolvedTextStyle": {
+        "fontSize": 8.51,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "REQUIRED GATE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "REQUIRED GATE",
+          "runs": [
+            {
+              "index": 1,
+              "text": "REQUIRED GATE",
+              "fontSize": 8.51,
+              "typeface": "Aptos",
+              "color": "#B45309",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ed8bat4",
+      "id": "11",
+      "bbox": [
+        632,
+        278,
+        438,
+        84
+      ],
+      "geometry": "rect",
+      "text": "Report instructions require Shopify Admin agreement within +/-2 orders and +/-2% revenue before publishing. Slack canvas overwrite also was not available.",
+      "textPreview": "Report instructions require Shopify Admin agreement within +/-2 orders and +/-2% revenue before publishing. Slack canvas overwrite also w...",
+      "resolvedFontSize": 12.51,
+      "resolvedTextStyle": {
+        "fontSize": 12.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Report instructions require Shopify Admin agreement within +/-2 orders and +/-2%"
+          },
+          {
+            "index": 2,
+            "text": "revenue before publishing. Slack canvas overwrite also was not available."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Report instructions require Shopify Admin agreement within +/-2 orders and +/-2% revenue before publishing. Slack canvas overwrite also was not available.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Report instructions require Shopify Admin agreement within +/-2 orders and +/-2% revenue before publishing. Slack canvas overwrite also was not available.",
+              "fontSize": 12.51,
+              "typeface": "Aptos",
+              "color": "#111827"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0z61032l",
+      "id": "12",
+      "bbox": [
+        96,
+        452,
+        42,
+        42
+      ],
+      "geometry": "rect",
+      "fillColor": "#176B87",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkzupwb2",
+      "id": "13",
+      "bbox": [
+        96,
+        459,
+        42,
+        24
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "center"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 18,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih4byhgn",
+      "id": "14",
+      "bbox": [
+        156,
+        452,
+        460,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Re-run Shopify reconciliation",
+      "textPreview": "Re-run Shopify reconciliation",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Re-run Shopify reconciliation"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Re-run Shopify reconciliation",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Re-run Shopify reconciliation",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#111827",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72x4nap4",
+      "id": "15",
+      "bbox": [
+        156,
+        480,
+        470,
+        46
+      ],
+      "geometry": "rect",
+      "text": "Validate Apr 27-May 03 orders and revenue against Shopify Admin totals.",
+      "textPreview": "Validate Apr 27-May 03 orders and revenue against Shopify Admin totals.",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Validate Apr 27-May 03 orders and revenue against Shopify Admin totals."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Validate Apr 27-May 03 orders and revenue against Shopify Admin totals.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Validate Apr 27-May 03 orders and revenue against Shopify Admin totals.",
+              "fontSize": 11,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nuxc3yl",
+      "id": "16",
+      "bbox": [
+        96,
+        540,
+        42,
+        42
+      ],
+      "geometry": "rect",
+      "fillColor": "#C47F2C",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8nqxs72",
+      "id": "17",
+      "bbox": [
+        96,
+        547,
+        42,
+        24
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "center"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 18,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ed8v6psf",
+      "id": "18",
+      "bbox": [
+        156,
+        540,
+        460,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Restore Slack canvas update path",
+      "textPreview": "Restore Slack canvas update path",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Restore Slack canvas update path"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Restore Slack canvas update path",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Restore Slack canvas update path",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#111827",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7y1kre1w",
+      "id": "19",
+      "bbox": [
+        156,
+        568,
+        470,
+        46
+      ],
+      "geometry": "rect",
+      "text": "Enable replacement of existing weekly canvas F0ASE57CV9C when the gate clears.",
+      "textPreview": "Enable replacement of existing weekly canvas F0ASE57CV9C when the gate clears.",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Enable replacement of existing weekly canvas F0ASE57CV9C when the gate clears."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Enable replacement of existing weekly canvas F0ASE57CV9C when the gate clears.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Enable replacement of existing weekly canvas F0ASE57CV9C when the gate clears.",
+              "fontSize": 11,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6tovaho",
+      "id": "20",
+      "bbox": [
+        650,
+        452,
+        42,
+        42
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulwval87",
+      "id": "21",
+      "bbox": [
+        650,
+        459,
+        42,
+        24
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "center"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 18,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfa9w3m",
+      "id": "22",
+      "bbox": [
+        710,
+        452,
+        460,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Cut weak Meta tests",
+      "textPreview": "Cut weak Meta tests",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Cut weak Meta tests"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Cut weak Meta tests",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Cut weak Meta tests",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#111827",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/crmhk3q5",
+      "id": "23",
+      "bbox": [
+        710,
+        480,
+        470,
+        46
+      ],
+      "geometry": "rect",
+      "text": "Act on ASC EG, KSA manual, and New Format Test KSA before scaling further.",
+      "textPreview": "Act on ASC EG, KSA manual, and New Format Test KSA before scaling further.",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Act on ASC EG, KSA manual, and New Format Test KSA before scaling further."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Act on ASC EG, KSA manual, and New Format Test KSA before scaling further.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Act on ASC EG, KSA manual, and New Format Test KSA before scaling further.",
+              "fontSize": 11,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ji5snelo",
+      "id": "24",
+      "bbox": [
+        650,
+        540,
+        42,
+        42
+      ],
+      "geometry": "rect",
+      "fillColor": "#168A55",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uxc3ylc7",
+      "id": "25",
+      "bbox": [
+        650,
+        547,
+        42,
+        24
+      ],
+      "geometry": "rect",
+      "text": "4",
+      "textPreview": "4",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "center"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4",
+          "runs": [
+            {
+              "index": 1,
+              "text": "4",
+              "fontSize": 18,
+              "typeface": "Georgia",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1kre1w7m",
+      "id": "26",
+      "bbox": [
+        710,
+        540,
+        460,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Keep efficient campaigns funded",
+      "textPreview": "Keep efficient campaigns funded",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "Aptos",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Keep efficient campaigns funded"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Keep efficient campaigns funded",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Keep efficient campaigns funded",
+              "fontSize": 15,
+              "typeface": "Aptos",
+              "color": "#111827",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3ylc7u5",
+      "id": "27",
+      "bbox": [
+        710,
+        568,
+        470,
+        46
+      ],
+      "geometry": "rect",
+      "text": "Protect 2604_ME_conversion_manual, KC Test Main Account 1.0, and ASC UAE.",
+      "textPreview": "Protect 2604_ME_conversion_manual, KC Test Main Account 1.0, and ASC UAE.",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Protect 2604_ME_conversion_manual, KC Test Main Account 1.0, and ASC UAE."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Protect 2604_ME_conversion_manual, KC Test Main Account 1.0, and ASC UAE.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Protect 2604_ME_conversion_manual, KC Test Main Account 1.0, and ASC UAE.",
+              "fontSize": 11,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqh0fepk",
+      "id": "28",
+      "bbox": [
+        58,
+        681,
+        1164,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9D2C7",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5o7qpg3",
+      "id": "29",
+      "bbox": [
+        58,
+        690,
+        860,
+        14
+      ],
+      "geometry": "rect",
+      "text": "Final status: PPTX prepared from weekly notes; publishing remains blocked by reconciliation gate",
+      "textPreview": "Final status: PPTX prepared from weekly notes; publishing remains blocked by reconciliation gate",
+      "resolvedFontSize": 7.51,
+      "resolvedTextStyle": {
+        "fontSize": 7.51,
+        "typeface": "Aptos",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Final status: PPTX prepared from weekly notes; publishing remains blocked by reconciliation gate"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Final status: PPTX prepared from weekly notes; publishing remains blocked by reconciliation gate",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Final status: PPTX prepared from weekly notes; publishing remains blocked by reconciliation gate",
+              "fontSize": 7.51,
+              "typeface": "Aptos",
+              "color": "#667085"
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fepkzup",
+      "id": "30",
+      "bbox": [
+        1180,
+        686,
+        42,
+        18
+      ],
+      "geometry": "rect",
+      "text": "06",
+      "textPreview": "06",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "fontSize": 11,
+        "typeface": "Georgia",
+        "bold": true,
+        "alignment": "right"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "06"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "06",
+          "runs": [
+            {
+              "index": 1,
+              "text": "06",
+              "fontSize": 11,
+              "typeface": "Georgia",
+              "color": "#667085",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

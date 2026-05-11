@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KICKS CREW ME - Competitor Intelligence</title>
+  <link rel="stylesheet" href="tiktok-dashboard.css">
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <strong>KICKS CREW ME</strong>
+      <nav class="nav" aria-label="Dashboard navigation">
+        <a href="competitor-tiktok-dashboard.html">Global</a>
+        <a href="gcc-competitor-tiktok-dashboard.html">Regional</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">Competitor intelligence</div>
+        <h1>TikTok competitor tracking, cleaned up and ready to continue.</h1>
+        <p class="lede">
+          Claude left a rough prototype that overstated what was working. This version keeps the useful dashboard work, marks the data honestly, and gives us a clean base for the real API or export workflow.
+        </p>
+        <div class="status">
+          <strong>Current state:</strong> local dashboards are usable. Live TikTok automation still needs a verified data source and credentials.
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2>Open</h2>
+        <div class="nav">
+          <a class="active" href="competitor-tiktok-dashboard.html">Global dashboard</a>
+          <a class="active" href="gcc-competitor-tiktok-dashboard.html">Regional dashboard</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <div class="metric-label">Competitors</div>
+        <div class="metric-value">6</div>
+        <div class="metric-detail">StockX, Stadium Goods, GOAT, Namshi, SHEIN Arabic, OUNASS</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-label">Regions</div>
+        <div class="metric-value">6</div>
+        <div class="metric-detail">Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-label">Sample records</div>
+        <div class="metric-value">22</div>
+        <div class="metric-detail">Cleaned from the inherited dashboard data</div>
+      </article>
+      <article class="metric-card">
+        <div class="metric-label">Status</div>
+        <div class="metric-value">Local</div>
+        <div class="metric-detail">No fake live/API claim</div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Next Build Steps</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Why it matters</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Connect verified export</strong></td>
+              <td>Replace inherited sample data with TikTok Ads Library or Motion export data.</td>
+              <td>Needed</td>
+            </tr>
+            <tr>
+              <td><strong>Define update format</strong></td>
+              <td>Use one CSV/JSON schema so the dashboard can refresh without hand editing HTML.</td>
+              <td>Ready to implement</td>
+            </tr>
+            <tr>
+              <td><strong>Schedule refresh</strong></td>
+              <td>Only schedule after data access is real and a manual run passes.</td>
+              <td>Blocked by source</td>
+            </tr>
+            <tr>
+              <td><strong>Slack summary</strong></td>
+              <td>Post daily top changes only after anomalies are calculated from real history.</td>
+              <td>Later</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

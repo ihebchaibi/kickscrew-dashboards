@@ -1,0 +1,46 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = "python ../scripts/refresh_competitor_platform_feeds.py && node scripts/build-netlify-data.mjs"
+
+[build.environment]
+  TIKTOK_FEED_URL = "/.netlify/functions/refresh-competitor-feeds?platform=tiktok"
+  META_FEED_URL = "/.netlify/functions/refresh-competitor-feeds?platform=meta"
+  GOOGLE_FEED_URL = "/.netlify/functions/refresh-competitor-feeds?platform=google"
+  SNAPCHAT_FEED_URL = "/.netlify/functions/refresh-competitor-feeds?platform=snapchat"
+  PYTHON_VERSION = "3.11"
+
+[[redirects]]
+  from = "/gcc"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/global"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/competitor-tiktok-dashboard.html"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/gcc-competitor-tiktok-dashboard.html"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/tiktok-competitor-data.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+[functions]
+  node_bundler = "esbuild"

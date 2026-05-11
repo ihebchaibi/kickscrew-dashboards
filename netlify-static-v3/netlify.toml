@@ -1,0 +1,38 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/gcc"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/global"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/competitor-tiktok-dashboard.html"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/gcc-competitor-tiktok-dashboard.html"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/tiktok-competitor-data.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+[functions]
+  node_bundler = "esbuild"

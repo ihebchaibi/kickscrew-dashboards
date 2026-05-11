@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KICKS CREW ME - TikTok Competitor Dashboard</title>
+  <link rel="stylesheet" href="tiktok-dashboard.css">
+</head>
+<body data-dashboard-mode="global">
+  <main class="shell">
+    <div class="topbar">
+      <strong>KICKS CREW ME</strong>
+      <nav class="nav" aria-label="Dashboard navigation">
+        <a class="active" href="competitor-tiktok-dashboard.html">Global</a>
+        <a href="gcc-competitor-tiktok-dashboard.html">Regional</a>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">TikTok competitor intelligence</div>
+        <h1>Global creative watchlist for StockX, Stadium Goods, GOAT, Namshi, SHEIN Arabic, and OUNASS.</h1>
+        <p class="lede">
+          This page replaces the overclaimed Claude prototype with a clear, local dashboard. The data is currently an imported sample, so the dashboard is useful for creative review and workflow testing while we connect a verified export.
+        </p>
+        <div id="dataStatus" class="status"></div>
+      </div>
+
+      <aside class="panel">
+        <h2>Priority Reads</h2>
+        <div id="anomalyList"></div>
+      </aside>
+    </section>
+
+    <section class="controls panel" aria-label="Dashboard filters">
+      <div class="field">
+        <label for="brandFilter">Brand</label>
+        <select id="brandFilter">
+          <option value="">All brands</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="regionFilter">Region</label>
+        <select id="regionFilter">
+          <option value="">All regions</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="formatFilter">Format</label>
+        <select id="formatFilter">
+          <option value="">All formats</option>
+          <option value="video">Video</option>
+          <option value="image">Image</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="searchFilter">Search</label>
+        <input id="searchFilter" type="search" placeholder="Brand, angle, headline">
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <button id="resetFilters" class="primary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <section id="metricCards" class="metric-grid" aria-label="Dashboard metrics"></section>
+
+    <div class="layout">
+      <section>
+        <div class="panel">
+          <h2>Brand Summary</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Brand</th>
+                  <th>Creatives</th>
+                  <th>Video / image</th>
+                  <th>Spend</th>
+                  <th>ROAS</th>
+                  <th>CPA</th>
+                  <th>Primary angle</th>
+                  <th>KC action</th>
+                </tr>
+              </thead>
+              <tbody id="brandTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Creative Samples</h2>
+          <div id="creativeGrid" class="creative-grid"></div>
+        </div>
+      </section>
+
+      <aside>
+        <section class="panel">
+          <h2>Estimated Spend Mix</h2>
+          <div id="barChart"></div>
+        </section>
+        <section class="panel">
+          <h2>Project Truth</h2>
+          <p>
+            The previous docs said the system was fully live. In this workspace, the real assets are a static dashboard, a data sample, and one Claude plugin manifest. Treat API automation as the next build step, not something already finished.
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <p class="footer-note">
+      Built for local review. Open this file directly or serve the folder with any static server.
+    </p>
+  </main>
+
+  <script src="tiktok-competitor-data.js"></script>
+  <script src="tiktok-dashboard.js"></script>
+</body>
+</html>

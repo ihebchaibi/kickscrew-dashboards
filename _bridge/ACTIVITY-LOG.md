@@ -1,0 +1,23 @@
+﻿- 2026-05-01 21:47 Codex/sync-setup: Created bridge folders and initialized activity log. Next: none.
+- 2026-05-01 21:47 Codex/slack-watch: 4 new/active items - May budget plan, UAE/KSA attribution context, finance guardrails, Kay translation status. Next: Claude to action if urgent.
+- 2026-05-01 21:47 Codex/automation-setup: Created hourly Slack watch and 07:00 daily context scout automations. Next: none.
+- 2026-05-01 22:50 Codex/slack-watch: [0] new items · No new Slack posts; carryovers: May plan + Kay push translation. Next: Claude to action if urgent.
+- 2026-05-01 23:51 Codex/slack-watch: [0] new items · No new Slack posts; carryovers: May plan/budget + Tabby assets + creative needs. Next: Claude to action if urgent.
+- 2026-05-03 13:06 Codex/slack-watch: [3] new items · Snap mascot AI videos status check; Daily Decision canvas shared; UAE push pending Saudi payments. Next: Claude to action if urgent.
+- 2026-05-03 13:11 Codex/slack-watch: [mode] overwrite enabled · Now writing to _bridge/from-codex/slack-watch.md (preserves unchecked open items). Next: Claude to action if urgent.
+- 2026-05-03 14:07 Codex/slack-watch: [0] new items · No new Slack posts in watched channels; carryovers unchanged (Tabby assets, creatives, Snap AI videos status, Daily Decision doc). Next: Claude to action if urgent.
+- 2026-05-04 10:20 Codex/context-scout: Daily scout written; carryover: ROAS up (7?10), Saudi payments blocker, actions: ingest F0B18HS5YS1 + Tabby assets + Snap AI videos. Next: Claude to use as Phase 0 base.
+- 2026-05-04 10:20 Codex/slack-watch: [4] new items · Snap KSA creative swap today; confirm UAE PMax +50%; mascot script update needed; WoW report requested. Next: Claude to action if urgent.
+- 2026-05-04 11:21 Codex/slack-watch: [5] new items · Mascot videos: old script request + 3 drafts posted; bad comments noted; weekly report blocked; Daily Decision reconciliation skipped. Next: Claude to action if urgent.
+
+- 2026-05-04 12:23 Codex/slack-watch: [1] new items · Ihab tagged to review ME Hero Brain doc updates. Next: Claude to action if urgent.
+- 2026-05-04 13:23 Codex/slack-watch: [1] new items · Eid al-Adha social/IG story request; Ihab looped Saori/Vivian for handoff. Next: Claude to action if urgent.
+- 2026-05-04 14:24 Codex/slack-watch: [0] new items · No new Slack items since 2026-05-04 13:23 in watched channels. Next: Claude to action if urgent.
+- 2026-05-04 15:25 Codex/slack-watch: [1] new items · Julien CC'd Ihab on Criteo intro email; no new ads-central posts. Next: Claude to action if urgent.
+- 2026-05-04 16:27 Codex/slack-watch: [1] new items · Criteo intro email CC’d to Ihab (ChatGPT Ads pitch). Next: Claude to action if urgent.
+- 2026-05-04 17:28 Codex/slack-watch: [1] new items · Mascot scripts thread: Julien requests 3 versions + GCC flags; asks Ihab for thoughts. Next: Claude to action if urgent.
+- 2026-05-04 18:30 Codex/slack-watch: [1] new items · Mascot scripts: Ihab to produce final 3-version script + GCC flags; ads-central quiet. Next: Claude to action if urgent.
+- 2026-05-04 19:32 Codex/slack-watch: [1] new items · Ines daily brief (social posts + weekly report in progress); no Ihab/JSU asks; ads-central quiet. Next: Claude to action if urgent.
+- 2026-05-04 20:32 Codex/slack-watch: [0] new items · No new Slack items since 2026-05-04 19:32 in watched channels. Next: Claude to action if urgent.
+- 2026-05-04 21:33 Codex/slack-watch: [1] new items · Julien shared X link + tagged Ihab in #arabic-ads-central; no localization updates. Next: Claude to action if urgent.
+- 2026-05-04 22:34 Codex/slack-watch: [0] new items · No new posts in watched Slack channels since 2026-05-04 21:33. Next: Claude to action if urgent.

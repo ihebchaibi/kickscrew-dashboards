@@ -1,0 +1,16 @@
+query OrdersForRepeatBlock($query: String!, $cursor: String) {
+  orders(first: 250, after: $cursor, query: $query, sortKey: CREATED_AT) {
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      id
+      name
+      createdAt
+      cancelledAt
+      sourceName
+      app { name }
+      customer { id numberOfOrders }
+      shippingAddress { country countryCodeV2 }
+      currentTotalPriceSet { shopMoney { amount currencyCode } }
+    }
+  }
+}

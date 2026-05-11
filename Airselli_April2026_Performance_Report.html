@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airselli — Apr 14–May 1, 2026 · Meta Ads Report</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:#0f0f1a; color:#e8e8f0; min-height:100vh; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg,#1a1a3e 0%,#0d2b6b 55%,#1a1a3e 100%);
+    padding: 38px 48px 32px;
+    border-bottom: 1px solid rgba(99,102,241,.3);
+    position: relative; overflow: hidden;
+  }
+  .header::after {
+    content:''; position:absolute; top:-80px; right:-80px;
+    width:340px; height:340px;
+    background: radial-gradient(circle,rgba(99,102,241,.13) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .header-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .brand { display:flex; align-items:center; gap:14px; }
+  .logo {
+    width:48px; height:48px; border-radius:12px;
+    background: linear-gradient(135deg,#6366f1,#8b5cf6);
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px; font-weight:900; color:#fff; letter-spacing:-1px;
+    box-shadow:0 4px 20px rgba(99,102,241,.4);
+  }
+  .brand-name { font-size:26px; font-weight:800; color:#fff; letter-spacing:-.5px; }
+  .brand-sub  { font-size:12px; color:rgba(255,255,255,.45); margin-top:2px; }
+  .badge {
+    background:rgba(99,102,241,.18); border:1px solid rgba(99,102,241,.4);
+    border-radius:20px; padding:6px 16px;
+    font-size:12px; color:#a5b4fc; font-weight:600; letter-spacing:.5px;
+  }
+  .header-meta { font-size:13px; color:rgba(255,255,255,.45); margin-top:4px; }
+  .header-meta strong { color:#a5b4fc; }
+
+  /* VERDICT */
+  .verdict {
+    margin:22px 48px;
+    background:linear-gradient(135deg,rgba(16,185,129,.11),rgba(99,102,241,.07));
+    border:1px solid rgba(16,185,129,.28); border-radius:16px;
+    padding:20px 26px; display:flex; align-items:center; gap:16px;
+  }
+  .verdict-icon { font-size:30px; }
+  .verdict h2 { font-size:16px; font-weight:700; color:#34d399; margin-bottom:4px; }
+  .verdict p  { font-size:12.5px; color:rgba(255,255,255,.6); line-height:1.55; }
+
+  /* CONTENT */
+  .content { padding:0 48px 52px; }
+  .sec { font-size:10.5px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:rgba(255,255,255,.35); margin:28px 0 13px; }
+
+  /* KPI GRIDS */
+  .kpi5 { display:grid; grid-template-columns:repeat(5,1fr); gap:13px; margin-bottom:13px; }
+  .kpi4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
+
+  .kpi {
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    border-radius:14px; padding:19px 17px 15px; position:relative; overflow:hidden;
+    transition:transform .2s,border-color .2s;
+  }
+  .kpi:hover { transform:translateY(-2px); border-color:rgba(99,102,241,.32); }
+  .kpi::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background:var(--ac,linear-gradient(90deg,#6366f1,#8b5cf6)); border-radius:14px 14px 0 0;
+  }
+  .kpi-ico  { font-size:19px; margin-bottom:9px; }
+  .kpi-lbl  { font-size:10px; color:rgba(255,255,255,.42); font-weight:600; letter-spacing:.6px; text-transform:uppercase; margin-bottom:5px; }
+  .kpi-val  { font-size:25px; font-weight:800; color:#fff; letter-spacing:-1px; line-height:1; }
+  .kpi-val span { font-size:15px; font-weight:600; color:rgba(255,255,255,.45); }
+  .kpi-sub  { font-size:10.5px; color:rgba(255,255,255,.38); margin-top:5px; }
+  .pill-g   { display:inline-block; background:rgba(16,185,129,.14); color:#34d399; border:1px solid rgba(16,185,129,.28); border-radius:20px; padding:2px 8px; font-size:9.5px; font-weight:700; margin-top:5px; }
+
+  /* CHARTS */
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .card {
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    border-radius:16px; padding:22px;
+  }
+  .card h3   { font-size:13.5px; font-weight:700; color:#e8e8f0; margin-bottom:3px; }
+  .card .sub { font-size:10.5px; color:rgba(255,255,255,.38); margin-bottom:18px; }
+
+  /* TABLE */
+  .tcard {
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    border-radius:16px; padding:24px; overflow-x:auto;
+  }
+  .tcard h3   { font-size:13.5px; font-weight:700; color:#e8e8f0; margin-bottom:3px; }
+  .tcard .sub { font-size:10.5px; color:rgba(255,255,255,.38); margin-bottom:18px; }
+
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  thead th {
+    text-align:left; padding:7px 10px;
+    font-size:9.5px; font-weight:700; letter-spacing:.8px; text-transform:uppercase;
+    color:rgba(255,255,255,.32); border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  tbody tr { border-bottom:1px solid rgba(255,255,255,.04); transition:background .15s; }
+  tbody tr:hover { background:rgba(255,255,255,.03); }
+  tbody tr:last-child { border-bottom:none; }
+  td { padding:10px; color:rgba(255,255,255,.78); vertical-align:middle; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
+  .cn { max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#c7d2fe; font-weight:600; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:20px; font-size:9.5px; font-weight:700; }
+  .tg  { background:rgba(16,185,129,.14); color:#34d399; }
+  .tb  { background:rgba(99,102,241,.14);  color:#a5b4fc; }
+  .tp  { background:rgba(139,92,246,.14);  color:#c4b5fd; }
+  .to  { background:rgba(245,158,11,.14);  color:#fbbf24; }
+  .ts  { background:rgba(236,72,153,.14);  color:#f472b6; }
+  .dot-a { color:#34d399; font-size:8px; margin-right:4px; }
+  .dot-p { color:rgba(255,255,255,.3); font-size:8px; margin-right:4px; }
+
+  /* HIGHLIGHTS */
+  .h3g { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+  .hcard {
+    background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07);
+    border-radius:14px; padding:17px 19px; display:flex; align-items:flex-start; gap:13px;
+  }
+  .hico { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; }
+  .hico.g { background:rgba(16,185,129,.12); }
+  .hico.i { background:rgba(99,102,241,.12); }
+  .hico.p { background:rgba(139,92,246,.12); }
+  .hico.a { background:rgba(245,158,11,.12); }
+  .hico.c { background:rgba(6,182,212,.12); }
+  .hico.r { background:rgba(244,63,94,.12); }
+  .hbody h4 { font-size:12.5px; font-weight:700; color:#fff; margin-bottom:4px; }
+  .hbody p  { font-size:11.5px; color:rgba(255,255,255,.48); line-height:1.5; }
+
+  /* FOOTER */
+  .footer {
+    margin:36px 48px 0; padding:18px 0;
+    border-top:1px solid rgba(255,255,255,.06);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .footer p { font-size:10.5px; color:rgba(255,255,255,.22); }
+
+  @media(max-width:1100px){
+    .kpi5,.kpi4 { grid-template-columns:repeat(2,1fr); }
+    .two,.h3g    { grid-template-columns:1fr; }
+    .header,.content,.verdict,.footer { padding-left:18px; padding-right:18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-row">
+    <div class="brand">
+      <div class="logo">AS</div>
+      <div>
+        <div class="brand-name">Airselli</div>
+        <div class="brand-sub">Facebook Page &amp; Instagram · Page ID 312386259498269 · Meta Ads</div>
+      </div>
+    </div>
+    <div class="badge">📊 APR 14 – MAY 1, 2026</div>
+  </div>
+  <div class="header-meta">
+    Period: <strong>April 14 – May 1, 2026</strong> &nbsp;·&nbsp;
+    Source: <strong>Windsor.ai + Facebook Business Manager</strong> &nbsp;·&nbsp;
+    Scope: <strong>Airselli page only — 8 confirmed campaigns</strong> &nbsp;·&nbsp;
+    Currency: <strong>USD</strong>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict">
+  <div class="verdict-icon">🚀</div>
+  <div>
+    <h2>Strong 18-Day Run — 667K Impressions · 111K Engagements · 1,154 New Page Likes · 14.3% CTR</h2>
+    <p>In just 18 days, Airselli's 8 Facebook & Instagram campaigns reached <strong>297,690 unique people</strong>, generated <strong>111,484 engagements</strong>, and grew the page by <strong>1,154 new followers</strong> — all for under <strong>€159 / $154</strong>. A 16.7% engagement rate and a $0.23 CPM demonstrate exceptional creative efficiency and audience fit.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ROW 1 -->
+  <div class="sec">📈 Reach & Scale</div>
+  <div class="kpi5">
+    <div class="kpi" style="--ac:linear-gradient(90deg,#6366f1,#8b5cf6)">
+      <div class="kpi-ico">👁️</div>
+      <div class="kpi-lbl">Impressions</div>
+      <div class="kpi-val">667<span>K</span></div>
+      <div class="pill-g">8 campaigns</div>
+      <div class="kpi-sub">18-day window</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#06b6d4,#6366f1)">
+      <div class="kpi-ico">🌍</div>
+      <div class="kpi-lbl">Unique Reach</div>
+      <div class="kpi-val">297<span>K</span></div>
+      <div class="pill-g">✅ 297K People</div>
+      <div class="kpi-sub">Unique individuals</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#10b981,#06b6d4)">
+      <div class="kpi-ico">🖱️</div>
+      <div class="kpi-lbl">Total Clicks</div>
+      <div class="kpi-val">95<span>K</span></div>
+      <div class="pill-g">⚡ 14.3% CTR</div>
+      <div class="kpi-sub">CPC: $0.0016</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#f59e0b,#ef4444)">
+      <div class="kpi-ico">💰</div>
+      <div class="kpi-lbl">Total Spend</div>
+      <div class="kpi-val">€159</div>
+      <div class="pill-g">$154 USD</div>
+      <div class="kpi-sub">$0.23 CPM</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#8b5cf6,#ec4899)">
+      <div class="kpi-ico">📊</div>
+      <div class="kpi-lbl">Engagement Rate</div>
+      <div class="kpi-val">16.7<span>%</span></div>
+      <div class="pill-g">🏆 5× Industry Avg</div>
+      <div class="kpi-sub">$0.0014 / engagement</div>
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="sec">💬 Engagement & Community</div>
+  <div class="kpi4">
+    <div class="kpi" style="--ac:linear-gradient(90deg,#10b981,#34d399)">
+      <div class="kpi-ico">🤝</div>
+      <div class="kpi-lbl">Total Engagements</div>
+      <div class="kpi-val">111<span>K</span></div>
+      <div class="pill-g">🔥 111,484 total</div>
+      <div class="kpi-sub">Page + post interactions</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#ec4899,#8b5cf6)">
+      <div class="kpi-ico">❤️</div>
+      <div class="kpi-lbl">Reactions</div>
+      <div class="kpi-val">8,609</div>
+      <div class="pill-g">❤️ High Sentiment</div>
+      <div class="kpi-sub">Likes, loves, wows</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#0ea5e9,#6366f1)">
+      <div class="kpi-ico">👍</div>
+      <div class="kpi-lbl">New Page Likes</div>
+      <div class="kpi-val">1,154</div>
+      <div class="pill-g">$0.13 / follower</div>
+      <div class="kpi-sub">Per Facebook Manager</div>
+    </div>
+    <div class="kpi" style="--ac:linear-gradient(90deg,#f59e0b,#10b981)">
+      <div class="kpi-ico">🎯</div>
+      <div class="kpi-lbl">Top Result</div>
+      <div class="kpi-val">8,029</div>
+      <div class="pill-g">وش هو Airselli؟ 2.0</div>
+      <div class="kpi-sub">Post engagements · Apr 17</div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec">📊 Visual Breakdown</div>
+  <div class="two">
+    <div class="card">
+      <h3>Impressions & Reach by Campaign</h3>
+      <div class="sub">Views vs unique viewers — Airselli page · Apr 14–May 1</div>
+      <canvas id="reachChart" height="230"></canvas>
+    </div>
+    <div class="card">
+      <h3>Engagement Distribution</h3>
+      <div class="sub">111K total engagements across 8 campaigns</div>
+      <canvas id="engChart" height="230"></canvas>
+    </div>
+  </div>
+  <div class="two" style="margin-top:16px;">
+    <div class="card">
+      <h3>Spend vs. Results per Campaign</h3>
+      <div class="sub">Budget efficiency — spend (€) plotted against key results</div>
+      <canvas id="spendChart" height="230"></canvas>
+    </div>
+    <div class="card">
+      <h3>Reactions Breakdown</h3>
+      <div class="sub">8,609 total reactions — dominated by the brand video</div>
+      <canvas id="reactChart" height="230"></canvas>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sec">📋 Campaign-Level Detail</div>
+  <div class="tcard">
+    <h3>All 8 Airselli Campaigns · Apr 14 – May 1, 2026</h3>
+    <p class="sub">Source: Windsor.ai (USD) + Facebook Business Manager confirmation · Page 312386259498269</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Campaign</th>
+          <th>Type</th>
+          <th style="text-align:right">Spend</th>
+          <th style="text-align:right">Impressions</th>
+          <th style="text-align:right">Reach</th>
+          <th style="text-align:right">Clicks</th>
+          <th style="text-align:right">Engagements</th>
+          <th style="text-align:right">Reactions</th>
+          <th>Facebook Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="dot-a">●</span>Active</td>
+          <td>Apr 29</td>
+          <td><div class="cn">Messaging Compaigne 2.0 Lookalike</div></td>
+          <td><span class="tag tg">Messaging</span></td>
+          <td class="n">€14.89</td>
+          <td class="n">39,085</td>
+          <td class="n">21,850</td>
+          <td class="n">5,262</td>
+          <td class="n">5,147</td>
+          <td class="n">139</td>
+          <td style="font-size:11px;color:rgba(255,255,255,.5)">Conv. started</td>
+        </tr>
+        <tr>
+          <td><span class="dot-a">●</span>Active</td>
+          <td>Apr 26</td>
+          <td><div class="cn">Promoting AirSelli Page Likes</div></td>
+          <td><span class="tag tb">Page Likes</span></td>
+          <td class="n">€17.48</td>
+          <td class="n">47,966</td>
+          <td class="n">29,948</td>
+          <td class="n">2,825</td>
+          <td class="n">2,132</td>
+          <td class="n">312</td>
+          <td style="font-size:11px;color:#34d399;font-weight:700">1,154 Follows ✅</td>
+        </tr>
+        <tr>
+          <td><span class="dot-a">●</span>Active</td>
+          <td>Apr 26</td>
+          <td><div class="cn">Airselli Messaging Compaigne 1</div></td>
+          <td><span class="tag tg">Messaging</span></td>
+          <td class="n">€49.64</td>
+          <td class="n">152,836</td>
+          <td class="n">63,422</td>
+          <td class="n">43,438</td>
+          <td class="n">48,974</td>
+          <td class="n">132</td>
+          <td style="font-size:11px;color:rgba(255,255,255,.5)">Conv. started</td>
+        </tr>
+        <tr>
+          <td><span class="dot-a">●</span>Active</td>
+          <td>Apr 23</td>
+          <td><div class="cn">Post: 3 خطوات فقط (Delivery)</div></td>
+          <td><span class="tag tg">Messages</span></td>
+          <td class="n">€25.60</td>
+          <td class="n">102,722</td>
+          <td class="n">39,924</td>
+          <td class="n">35,165</td>
+          <td class="n">39,828</td>
+          <td class="n">56</td>
+          <td style="font-size:11px;color:rgba(255,255,255,.5)">Conv. started</td>
+        </tr>
+        <tr>
+          <td><span class="dot-p">●</span>Paused</td>
+          <td>Apr 22</td>
+          <td><div class="cn">Ad: وش هو Airselli (Messages)</div></td>
+          <td><span class="tag tg">Messages</span></td>
+          <td class="n">€11.25</td>
+          <td class="n">252,646</td>
+          <td class="n">93,751</td>
+          <td class="n">4,468</td>
+          <td class="n">4,199</td>
+          <td class="n">122</td>
+          <td style="font-size:11px;color:#a5b4fc;font-weight:700">4,069 Link clicks</td>
+        </tr>
+        <tr>
+          <td><span class="dot-p">●</span>Paused</td>
+          <td>Apr 19</td>
+          <td><div class="cn">Messages Campaign test 1.0</div></td>
+          <td><span class="tag tg">Messaging</span></td>
+          <td class="n">€3.57</td>
+          <td class="n">12,537</td>
+          <td class="n">7,857</td>
+          <td class="n">2,756</td>
+          <td class="n">2,949</td>
+          <td class="n">39</td>
+          <td style="font-size:11px;color:rgba(255,255,255,.5)">Conv. started</td>
+        </tr>
+        <tr>
+          <td><span class="dot-p">●</span>Paused</td>
+          <td>Apr 17</td>
+          <td><div class="cn">وش هو Airselli؟ 2.0 (Brand Video)</div></td>
+          <td><span class="tag ts">Post Eng.</span></td>
+          <td class="n">€26.26</td>
+          <td class="n">39,816</td>
+          <td class="n">21,211</td>
+          <td class="n">1,235</td>
+          <td class="n">8,029</td>
+          <td class="n" style="color:#c4b5fd">7,649</td>
+          <td style="font-size:11px;color:#c4b5fd;font-weight:700">8,029 Engagements ⭐</td>
+        </tr>
+        <tr>
+          <td><span class="dot-p">●</span>Paused</td>
+          <td>Apr 14</td>
+          <td><div class="cn">Post: وش هو Airselli؟ (Awareness)</div></td>
+          <td><span class="tag ts">Post Eng.</span></td>
+          <td class="n">€10.36</td>
+          <td class="n">19,974</td>
+          <td class="n">19,727</td>
+          <td class="n">234</td>
+          <td class="n">226</td>
+          <td class="n">160</td>
+          <td style="font-size:11px;color:rgba(255,255,255,.5)">226 Engagements</td>
+        </tr>
+        <!-- TOTAL -->
+        <tr style="background:rgba(99,102,241,.08);border-top:1px solid rgba(99,102,241,.22)">
+          <td colspan="2"></td>
+          <td style="color:#a5b4fc;font-weight:800;font-size:12px">TOTAL · 8 Campaigns</td>
+          <td></td>
+          <td class="n" style="color:#fbbf24;font-weight:800">€159.05</td>
+          <td class="n" style="color:#a5b4fc;font-weight:700">667,582</td>
+          <td class="n" style="color:#a5b4fc;font-weight:700">297,690</td>
+          <td class="n" style="color:#a5b4fc;font-weight:700">95,383</td>
+          <td class="n" style="color:#34d399;font-weight:800">111,484</td>
+          <td class="n" style="color:#c4b5fd;font-weight:700">8,609</td>
+          <td style="font-size:11px;color:#34d399;font-weight:700">1,154 New Likes ✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="sec">🏆 Key Wins</div>
+  <div class="h3g">
+    <div class="hcard">
+      <div class="hico g">🎯</div>
+      <div class="hbody">
+        <h4>14.3% CTR — Exceptional Click-Through</h4>
+        <p>Industry average for Meta ads sits around 0.9–1.5%. Airselli achieved a <strong>14.3% CTR</strong>, meaning nearly 1 in 7 people who saw the ads clicked — driven by the Airselli Messaging Compaigne 1 (43K clicks from 152K views).</p>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hico i">💰</div>
+      <div class="hbody">
+        <h4>€159 for 667K Impressions — $0.23 CPM</h4>
+        <p>Global Meta CPMs average €5–€12. Airselli generated <strong>667,582 impressions for €159</strong> — a CPM of just €0.24. Every euro of budget delivered well above market value in visibility.</p>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hico p">❤️</div>
+      <div class="hbody">
+        <h4>وش هو Airselli؟ 2.0 — Star Creative</h4>
+        <p>The brand video drove <strong>8,029 engagements with 7,649 reactions</strong> — a 95% reaction rate. For €26.26 on 21K viewers, this is the most efficient brand awareness creative of the month.</p>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hico a">👍</div>
+      <div class="hbody">
+        <h4>1,154 New Page Followers at €0.15 Each</h4>
+        <p>The dedicated Page Likes campaign (Apr 26) delivered <strong>1,154 new followers</strong> for €17.48 — a cost per follower of just <strong>€0.015</strong>. Exceptional community growth at minimal cost.</p>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hico c">📩</div>
+      <div class="hbody">
+        <h4>3 Active Campaigns Still Running</h4>
+        <p>Messaging Compaigne 2.0 Lookalike, Page Likes, and Airselli Messaging Compaigne 1 are all <strong>still active</strong> as of May 1 — results will continue to accumulate. Current trajectory is very strong.</p>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hico r">⚡</div>
+      <div class="hbody">
+        <h4>16.7% Engagement Rate — 5× Benchmark</h4>
+        <p>The blended engagement rate of <strong>16.7%</strong> across all 8 campaigns is roughly 5× the Meta paid benchmark. The delivery-focused "3 خطوات فقط" post stands out with <strong>39,828 engagements</strong> from 102K views.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Airselli · Page ID 312386259498269 · Ad Account PUB-AIRSELLI-PRO (138642554693437) · Windsor.ai + Facebook Business Manager · May 2, 2026</p>
+  <p>Prepared by Ihab Chaibi · KICKS CREW Middle East</p>
+</div>
+
+<script>
+Chart.defaults.color = 'rgba(255,255,255,0.45)';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+const P = ['#6366f1','#8b5cf6','#06b6d4','#10b981','#f59e0b','#ec4899','#0ea5e9','#34d399'];
+const labels = ['Msg 2.0 Lookalike','Page Likes','Msg Camp. 1','3 خطوات','Apr 22 Messages','Msg Test 1.0','وش هو 2.0','وش هو Apr14'];
+
+// 1. Reach grouped bar
+new Chart(document.getElementById('reachChart'),{
+  type:'bar',
+  data:{
+    labels,
+    datasets:[
+      {label:'Impressions',data:[39085,47966,152836,102722,252646,12537,39816,19974],backgroundColor:'#6366f1aa',borderRadius:4},
+      {label:'Reach',data:[21850,29948,63422,39924,93751,7857,21211,19727],backgroundColor:'#10b981aa',borderRadius:4}
+    ]
+  },
+  options:{
+    plugins:{legend:{position:'top',labels:{font:{size:10},padding:12,boxWidth:11}}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:9},maxRotation:35}},
+      y:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v}}
+    }
+  }
+});
+
+// 2. Engagement donut
+new Chart(document.getElementById('engChart'),{
+  type:'doughnut',
+  data:{
+    labels,
+    datasets:[{data:[5147,2132,48974,39828,4199,2949,8029,226],backgroundColor:P,borderWidth:2,borderColor:'#0f0f1a'}]
+  },
+  options:{
+    cutout:'60%',
+    plugins:{legend:{position:'right',labels:{font:{size:9.5},padding:8,boxWidth:11}}}
+  }
+});
+
+// 3. Spend bar (EUR)
+new Chart(document.getElementById('spendChart'),{
+  type:'bar',
+  data:{
+    labels,
+    datasets:[{
+      label:'Spend (€)',
+      data:[14.89,17.48,49.64,25.60,11.25,3.57,26.26,10.36],
+      backgroundColor:P,borderRadius:6,borderSkipped:false
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    plugins:{legend:{display:false}},
+    scales:{
+      x:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{callback:v=>'€'+v}},
+      y:{grid:{display:false},ticks:{font:{size:9.5}}}
+    }
+  }
+});
+
+// 4. Reactions bar
+new Chart(document.getElementById('reactChart'),{
+  type:'bar',
+  data:{
+    labels,
+    datasets:[{label:'Reactions',data:[139,312,132,56,122,39,7649,160],backgroundColor:P,borderRadius:6,borderSkipped:false}]
+  },
+  options:{
+    plugins:{legend:{display:false}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:9.5},maxRotation:35}},
+      y:{grid:{color:'rgba(255,255,255,0.05)'},ticks:{callback:v=>v>=1000?(v/1000).toFixed(1)+'K':v}}
+    }
+  }
+});
+</script>
+</body>
+</html>

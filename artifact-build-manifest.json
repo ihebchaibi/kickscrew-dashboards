@@ -1,0 +1,77 @@
+{
+  "output": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\KC_ME_Weekly_Report_Apr27-May03_2026.pptx",
+  "outputBytes": 38175,
+  "slideCount": 6,
+  "slideSize": {
+    "width": 1280,
+    "height": 720
+  },
+  "previewDir": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview",
+  "previewPaths": [
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-01.png",
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-02.png",
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-03.png",
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-04.png",
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-05.png",
+    "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\preview\\slide-06.png"
+  ],
+  "layoutDir": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout",
+  "layoutResults": [
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-01.layout.json"
+    },
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-02.layout.json"
+    },
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-03.layout.json"
+    },
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-04.layout.json"
+    },
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-05.layout.json"
+    },
+    {
+      "layoutPath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\layout\\slide-06.layout.json"
+    }
+  ],
+  "slides": [
+    {
+      "index": 1,
+      "requestedSlideNumber": 1,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-01.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 2,
+      "requestedSlideNumber": 2,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-02.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 3,
+      "requestedSlideNumber": 3,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-03.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 4,
+      "requestedSlideNumber": 4,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-04.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 5,
+      "requestedSlideNumber": 5,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-05.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 6,
+      "requestedSlideNumber": 6,
+      "modulePath": "H:\\kickscrew\\KICKS CREW ME – Marketing & Content Assistant\\codex-presentations-manual-20260504-weekly-pptx\\slides\\slide-06.mjs",
+      "exportName": "default"
+    }
+  ]
+}

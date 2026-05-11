@@ -1,0 +1,728 @@
+{
+  "period": {
+    "from": "2026-03-01",
+    "to": "2026-03-31"
+  },
+  "markets": {
+    "AE": {
+      "sessions": 128213,
+      "view_item": 203194,
+      "add_to_cart": 5621,
+      "begin_checkout": 8352,
+      "purchases": 571,
+      "cvr": 0.44535265534696167,
+      "atc_rate": 4.384110815595922
+    },
+    "AM": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 160,
+      "begin_checkout": 139,
+      "purchases": 68,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "AR": {
+      "sessions": 8164,
+      "view_item": 14250,
+      "add_to_cart": 270,
+      "begin_checkout": 297,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 3.3072023517883387
+    },
+    "AT": {
+      "sessions": 12447,
+      "view_item": 11124,
+      "add_to_cart": 199,
+      "begin_checkout": 183,
+      "purchases": 23,
+      "cvr": 0.18478348196352537,
+      "atc_rate": 1.5987788222061543
+    },
+    "AU": {
+      "sessions": 142335,
+      "view_item": 225151,
+      "add_to_cart": 9015,
+      "begin_checkout": 11318,
+      "purchases": 1123,
+      "cvr": 0.7889837355534479,
+      "atc_rate": 6.333649488881863
+    },
+    "BE": {
+      "sessions": 21930,
+      "view_item": 35494,
+      "add_to_cart": 269,
+      "begin_checkout": 281,
+      "purchases": 27,
+      "cvr": 0.12311901504787962,
+      "atc_rate": 1.2266301869585043
+    },
+    "BG": {
+      "sessions": 11407,
+      "view_item": 14978,
+      "add_to_cart": 157,
+      "begin_checkout": 210,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 1.3763478565792935
+    },
+    "BR": {
+      "sessions": 10298,
+      "view_item": 17012,
+      "add_to_cart": 316,
+      "begin_checkout": 424,
+      "purchases": 19,
+      "cvr": 0.18450184501845018,
+      "atc_rate": 3.0685570013594874
+    },
+    "BS": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 7,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "BW": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 6,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "CA": {
+      "sessions": 126875,
+      "view_item": 220489,
+      "add_to_cart": 8692,
+      "begin_checkout": 9553,
+      "purchases": 612,
+      "cvr": 0.4823645320197045,
+      "atc_rate": 6.850837438423646
+    },
+    "CH": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 284,
+      "begin_checkout": 321,
+      "purchases": 32,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "CN": {
+      "sessions": 165120,
+      "view_item": 259998,
+      "add_to_cart": 77,
+      "begin_checkout": 204,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.046632751937984496
+    },
+    "CO": {
+      "sessions": 10161,
+      "view_item": 21289,
+      "add_to_cart": 443,
+      "begin_checkout": 558,
+      "purchases": 21,
+      "cvr": 0.20667257159728372,
+      "atc_rate": 4.359807105599843
+    },
+    "CR": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 6,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "CY": {
+      "sessions": 6722,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "CZ": {
+      "sessions": 11716,
+      "view_item": 14665,
+      "add_to_cart": 205,
+      "begin_checkout": 1195,
+      "purchases": 8,
+      "cvr": 0.06828269033799932,
+      "atc_rate": 1.7497439399112327
+    },
+    "DE": {
+      "sessions": 116756,
+      "view_item": 89357,
+      "add_to_cart": 4804,
+      "begin_checkout": 4850,
+      "purchases": 559,
+      "cvr": 0.4787762513275549,
+      "atc_rate": 4.114563705505499
+    },
+    "DK": {
+      "sessions": 10447,
+      "view_item": 14990,
+      "add_to_cart": 171,
+      "begin_checkout": 184,
+      "purchases": 14,
+      "cvr": 0.13400976356848857,
+      "atc_rate": 1.6368335407293961
+    },
+    "DO": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 100,
+      "begin_checkout": 145,
+      "purchases": 15,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "DZ": {
+      "sessions": 0,
+      "view_item": 8616,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "EC": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 75,
+      "begin_checkout": 103,
+      "purchases": 8,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "EE": {
+      "sessions": 7101,
+      "view_item": 11779,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "EG": {
+      "sessions": 7883,
+      "view_item": 16179,
+      "add_to_cart": 187,
+      "begin_checkout": 241,
+      "purchases": 11,
+      "cvr": 0.13954078396549535,
+      "atc_rate": 2.372193327413421
+    },
+    "ES": {
+      "sessions": 84262,
+      "view_item": 93881,
+      "add_to_cart": 2411,
+      "begin_checkout": 2274,
+      "purchases": 174,
+      "cvr": 0.20649877762217841,
+      "atc_rate": 2.8613135221096107
+    },
+    "FI": {
+      "sessions": 21141,
+      "view_item": 37236,
+      "add_to_cart": 179,
+      "begin_checkout": 173,
+      "purchases": 15,
+      "cvr": 0.07095217823187172,
+      "atc_rate": 0.8466959935670025
+    },
+    "FR": {
+      "sessions": 74487,
+      "view_item": 69446,
+      "add_to_cart": 2324,
+      "begin_checkout": 2220,
+      "purchases": 214,
+      "cvr": 0.2872984547639185,
+      "atc_rate": 3.120007518090405
+    },
+    "GB": {
+      "sessions": 443274,
+      "view_item": 338986,
+      "add_to_cart": 23869,
+      "begin_checkout": 20512,
+      "purchases": 3959,
+      "cvr": 0.8931270500864026,
+      "atc_rate": 5.384705622256212
+    },
+    "GE": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 93,
+      "purchases": 9,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "GR": {
+      "sessions": 26314,
+      "view_item": 39520,
+      "add_to_cart": 699,
+      "begin_checkout": 686,
+      "purchases": 29,
+      "cvr": 0.11020749410959946,
+      "atc_rate": 2.656380633883104
+    },
+    "HK": {
+      "sessions": 43001,
+      "view_item": 73245,
+      "add_to_cart": 1755,
+      "begin_checkout": 2117,
+      "purchases": 285,
+      "cvr": 0.6627752842957141,
+      "atc_rate": 4.081300434873607
+    },
+    "HR": {
+      "sessions": 20403,
+      "view_item": 25266,
+      "add_to_cart": 120,
+      "begin_checkout": 154,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.5881488016468166
+    },
+    "HU": {
+      "sessions": 22521,
+      "view_item": 30458,
+      "add_to_cart": 208,
+      "begin_checkout": 237,
+      "purchases": 4,
+      "cvr": 0.017761200657164425,
+      "atc_rate": 0.92358243417255
+    },
+    "ID": {
+      "sessions": 19514,
+      "view_item": 28364,
+      "add_to_cart": 361,
+      "begin_checkout": 396,
+      "purchases": 6,
+      "cvr": 0.030747155888080354,
+      "atc_rate": 1.8499538792661678
+    },
+    "IE": {
+      "sessions": 41398,
+      "view_item": 36141,
+      "add_to_cart": 466,
+      "begin_checkout": 497,
+      "purchases": 43,
+      "cvr": 0.10386975216194018,
+      "atc_rate": 1.1256582443596308
+    },
+    "IL": {
+      "sessions": 54550,
+      "view_item": 35998,
+      "add_to_cart": 241,
+      "begin_checkout": 269,
+      "purchases": 7,
+      "cvr": 0.012832263978001832,
+      "atc_rate": 0.4417965169569203
+    },
+    "IN": {
+      "sessions": 32569,
+      "view_item": 51505,
+      "add_to_cart": 1680,
+      "begin_checkout": 2097,
+      "purchases": 20,
+      "cvr": 0.06140808744511653,
+      "atc_rate": 5.158279345389788
+    },
+    "IQ": {
+      "sessions": 6819,
+      "view_item": 12546,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "IS": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 4,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "IT": {
+      "sessions": 31433,
+      "view_item": 29421,
+      "add_to_cart": 819,
+      "begin_checkout": 917,
+      "purchases": 74,
+      "cvr": 0.23542137244297393,
+      "atc_rate": 2.6055419463621035
+    },
+    "JP": {
+      "sessions": 15290,
+      "view_item": 25742,
+      "add_to_cart": 326,
+      "begin_checkout": 440,
+      "purchases": 81,
+      "cvr": 0.5297580117724003,
+      "atc_rate": 2.132112491824722
+    },
+    "KE": {
+      "sessions": 13032,
+      "view_item": 16374,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "KG": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 45,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "KR": {
+      "sessions": 8150,
+      "view_item": 12725,
+      "add_to_cart": 228,
+      "begin_checkout": 273,
+      "purchases": 25,
+      "cvr": 0.3067484662576687,
+      "atc_rate": 2.7975460122699385
+    },
+    "KW": {
+      "sessions": 13123,
+      "view_item": 17439,
+      "add_to_cart": 370,
+      "begin_checkout": 588,
+      "purchases": 46,
+      "cvr": 0.3505296045111636,
+      "atc_rate": 2.8194772536767507
+    },
+    "LT": {
+      "sessions": 20503,
+      "view_item": 23791,
+      "add_to_cart": 87,
+      "begin_checkout": 134,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.4243281471004243
+    },
+    "LU": {
+      "sessions": 6350,
+      "view_item": 11998,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "LV": {
+      "sessions": 6768,
+      "view_item": 12104,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "MA": {
+      "sessions": 5903,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "MO": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 11,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "MX": {
+      "sessions": 15010,
+      "view_item": 28036,
+      "add_to_cart": 520,
+      "begin_checkout": 560,
+      "purchases": 40,
+      "cvr": 0.2664890073284477,
+      "atc_rate": 3.46435709526982
+    },
+    "MY": {
+      "sessions": 10850,
+      "view_item": 19720,
+      "add_to_cart": 451,
+      "begin_checkout": 558,
+      "purchases": 27,
+      "cvr": 0.2488479262672811,
+      "atc_rate": 4.15668202764977
+    },
+    "NL": {
+      "sessions": 32551,
+      "view_item": 33153,
+      "add_to_cart": 660,
+      "begin_checkout": 701,
+      "purchases": 41,
+      "cvr": 0.12595619182206383,
+      "atc_rate": 2.0275874781112715
+    },
+    "NO": {
+      "sessions": 21664,
+      "view_item": 39828,
+      "add_to_cart": 293,
+      "begin_checkout": 338,
+      "purchases": 30,
+      "cvr": 0.13847858197932053,
+      "atc_rate": 1.3524741506646973
+    },
+    "NZ": {
+      "sessions": 16633,
+      "view_item": 24687,
+      "add_to_cart": 631,
+      "begin_checkout": 693,
+      "purchases": 4,
+      "cvr": 0.024048578127818195,
+      "atc_rate": 3.7936631996633197
+    },
+    "PE": {
+      "sessions": 8510,
+      "view_item": 14773,
+      "add_to_cart": 137,
+      "begin_checkout": 324,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 1.6098707403055228
+    },
+    "PH": {
+      "sessions": 113087,
+      "view_item": 210203,
+      "add_to_cart": 3996,
+      "begin_checkout": 5168,
+      "purchases": 263,
+      "cvr": 0.2325643088949216,
+      "atc_rate": 3.5335626553007864
+    },
+    "PL": {
+      "sessions": 31516,
+      "view_item": 33920,
+      "add_to_cart": 609,
+      "begin_checkout": 654,
+      "purchases": 20,
+      "cvr": 0.0634598299276558,
+      "atc_rate": 1.9323518212971191
+    },
+    "PR": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 225,
+      "begin_checkout": 440,
+      "purchases": 44,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "PT": {
+      "sessions": 22825,
+      "view_item": 29242,
+      "add_to_cart": 269,
+      "begin_checkout": 278,
+      "purchases": 19,
+      "cvr": 0.0832420591456736,
+      "atc_rate": 1.1785323110624315
+    },
+    "QA": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 153,
+      "begin_checkout": 240,
+      "purchases": 12,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "RO": {
+      "sessions": 13827,
+      "view_item": 17365,
+      "add_to_cart": 243,
+      "begin_checkout": 301,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 1.757431113039705
+    },
+    "RS": {
+      "sessions": 0,
+      "view_item": 8980,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "RU": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 9,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "SA": {
+      "sessions": 227417,
+      "view_item": 371973,
+      "add_to_cart": 8887,
+      "begin_checkout": 12327,
+      "purchases": 824,
+      "cvr": 0.36232999292049406,
+      "atc_rate": 3.90779932898596
+    },
+    "SE": {
+      "sessions": 42381,
+      "view_item": 42626,
+      "add_to_cart": 515,
+      "begin_checkout": 510,
+      "purchases": 27,
+      "cvr": 0.06370779358674877,
+      "atc_rate": 1.2151671739694674
+    },
+    "SG": {
+      "sessions": 206207,
+      "view_item": 292385,
+      "add_to_cart": 2840,
+      "begin_checkout": 3441,
+      "purchases": 389,
+      "cvr": 0.1886453903116771,
+      "atc_rate": 1.3772568341520899
+    },
+    "SI": {
+      "sessions": 18276,
+      "view_item": 11886,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.0
+    },
+    "SK": {
+      "sessions": 19268,
+      "view_item": 13182,
+      "add_to_cart": 88,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0.0,
+      "atc_rate": 0.4567157982146564
+    },
+    "TH": {
+      "sessions": 10736,
+      "view_item": 18895,
+      "add_to_cart": 132,
+      "begin_checkout": 191,
+      "purchases": 11,
+      "cvr": 0.10245901639344263,
+      "atc_rate": 1.2295081967213115
+    },
+    "TR": {
+      "sessions": 14193,
+      "view_item": 23922,
+      "add_to_cart": 467,
+      "begin_checkout": 752,
+      "purchases": 13,
+      "cvr": 0.09159444796730783,
+      "atc_rate": 3.290354400056366
+    },
+    "TT": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 96,
+      "begin_checkout": 121,
+      "purchases": 10,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "TW": {
+      "sessions": 21242,
+      "view_item": 42238,
+      "add_to_cart": 2233,
+      "begin_checkout": 1202,
+      "purchases": 138,
+      "cvr": 0.6496563412108087,
+      "atc_rate": 10.512192825534319
+    },
+    "UA": {
+      "sessions": 9655,
+      "view_item": 15448,
+      "add_to_cart": 224,
+      "begin_checkout": 314,
+      "purchases": 14,
+      "cvr": 0.14500258933195237,
+      "atc_rate": 2.320041429311238
+    },
+    "US": {
+      "sessions": 2094143,
+      "view_item": 3254215,
+      "add_to_cart": 110716,
+      "begin_checkout": 136116,
+      "purchases": 18071,
+      "cvr": 0.8629305639586218,
+      "atc_rate": 5.286935992432226
+    },
+    "UY": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 0,
+      "purchases": 5,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "VE": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 79,
+      "begin_checkout": 0,
+      "purchases": 0,
+      "cvr": 0,
+      "atc_rate": 0
+    },
+    "VN": {
+      "sessions": 20565,
+      "view_item": 29812,
+      "add_to_cart": 143,
+      "begin_checkout": 169,
+      "purchases": 4,
+      "cvr": 0.019450522732798445,
+      "atc_rate": 0.6953561876975444
+    },
+    "ZA": {
+      "sessions": 9302,
+      "view_item": 21715,
+      "add_to_cart": 603,
+      "begin_checkout": 773,
+      "purchases": 17,
+      "cvr": 0.1827563964738766,
+      "atc_rate": 6.482476886691034
+    },
+    "undefined": {
+      "sessions": 0,
+      "view_item": 0,
+      "add_to_cart": 0,
+      "begin_checkout": 280,
+      "purchases": 0,
+      "cvr": 0,
+      "atc_rate": 0
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KICKS CREW ME - Creative Intelligence</title>
+  <link rel="stylesheet" href="tiktok-dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brandmark">Creative Intelligence</div>
+      <nav class="platform-tabs" aria-label="Platform selector">
+        <button class="active" type="button" data-platform="tiktok">TikTok</button>
+        <button type="button" data-platform="meta">Meta</button>
+        <button type="button" data-platform="google">Google</button>
+        <button type="button" data-platform="snapchat">Snapchat</button>
+      </nav>
+      <nav class="nav-tabs" aria-label="Dashboard sections">
+        <button class="active" type="button" data-view="radar">Radar</button>
+        <button type="button" data-view="compare">KC vs Competitors</button>
+        <button type="button" data-view="hooks">Hooks</button>
+        <button type="button" data-view="regional">GCC</button>
+        <button type="button" data-view="briefs">Briefs</button>
+      </nav>
+      <div class="quick-tabs">
+        <a href="competitor-tiktok-dashboard.html">Global URL</a>
+        <a href="gcc-competitor-tiktok-dashboard.html">Regional URL</a>
+      </div>
+      <div class="live-badge" id="liveBadge" aria-live="polite">
+        <span class="live-dot"></span>
+        <span class="live-text">Embedded sample</span>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <div class="hero-main">
+          <h1>What should KICKS CREW run next, and why?</h1>
+          <p>
+            A competitive creative command center for TikTok and paid social: compare KC against StockX, GOAT, Stadium Goods, Namshi, SHEIN Arabic, OUNASS, and Level Shoes across hooks, taxonomy, GCC regions, demographics, and briefs.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button" id="refreshNowButton" type="button">Refresh now</button>
+            <span class="hero-helper">Pulls the latest KPI snapshot when the refresh endpoint is reachable.</span>
+          </div>
+          <div class="platform-legend" id="platformLegend"></div>
+        </div>
+        <aside class="panel status-line" id="statusLine"></aside>
+      </section>
+
+      <section class="panel filter-panel" aria-label="Filters">
+        <div class="field">
+          <label for="searchFilter">Search</label>
+          <input id="searchFilter" type="search" placeholder="hook, brand, audience, insight">
+        </div>
+        <div class="field">
+          <label for="sideFilter">Side</label>
+          <select id="sideFilter">
+            <option value="">KC + competitors</option>
+            <option value="own">KC benchmark</option>
+            <option value="competitor">Competitors only</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="brandFilter">Brand</label>
+          <select id="brandFilter"></select>
+        </div>
+        <div class="field">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter"></select>
+        </div>
+        <div class="field">
+          <label for="taxonomyFilter">Taxonomy</label>
+          <select id="taxonomyFilter"></select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="ghost-button" id="resetFilters" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="metric-grid" id="metricGrid" aria-label="Metrics"></section>
+
+      <section class="view active" id="radarView">
+        <div class="split">
+          <section class="panel">
+            <h2>Creative Radar</h2>
+            <div class="creative-grid" id="creativeGrid"></div>
+          </section>
+          <aside>
+            <section class="panel">
+              <h2>Intelligence</h2>
+              <div class="intel-list" id="intelList"></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="compareView">
+        <div class="split">
+          <section class="panel">
+            <h2>KC vs Competitors</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Brand</th>
+                    <th>Rows</th>
+                    <th>Spend</th>
+                    <th>ROAS</th>
+                    <th>CPA</th>
+                    <th>Hook rate</th>
+                  </tr>
+                </thead>
+                <tbody id="comparisonTable"></tbody>
+              </table>
+            </div>
+          </section>
+          <aside class="panel">
+            <h2>ROAS Ranking</h2>
+            <div class="comparison-bars" id="comparisonBars"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="hooksView">
+        <section class="panel">
+          <h2>Video Hook Analysis</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Brand / region</th>
+                  <th>First-three-second hook</th>
+                  <th>Hook rate</th>
+                  <th>ROAS</th>
+                  <th>Hook tactic</th>
+                </tr>
+              </thead>
+              <tbody id="hookTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="regionalView">
+        <div class="split">
+          <section class="panel">
+            <h2>GCC Regional Split</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Region</th>
+                    <th>Rows</th>
+                    <th>Brands</th>
+                    <th>Spend</th>
+                    <th>ROAS</th>
+                  </tr>
+                </thead>
+                <tbody id="regionalTable"></tbody>
+              </table>
+            </div>
+          </section>
+          <aside class="panel">
+            <h2>Demographic Heatmap</h2>
+            <div class="heatmap" id="heatmap"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="briefsView">
+        <section class="panel">
+          <h2>Auto-Generated Creative Briefs</h2>
+          <div class="brief-grid" id="briefGrid"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="tiktok-competitor-data.js"></script>
+  <script src="tiktok-dashboard.js"></script>
+</body>
+</html>

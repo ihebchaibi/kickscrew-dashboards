@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KICKS CREW ADS ME - April 2026 Monthly Report</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #657080;
+      --line: #d9e1ea;
+      --panel: #ffffff;
+      --bg: #f4f7fb;
+      --green: #16a34a;
+      --green-soft: #e8f7ee;
+      --yellow: #d99a00;
+      --yellow-soft: #fff4d6;
+      --red: #dc2626;
+      --red-soft: #fde8e8;
+      --blue: #2563eb;
+      --blue-soft: #e8f0ff;
+      --dark: #0f172a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 22px 56px;
+    }
+
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 8px;
+      padding: 28px;
+      border: 1px solid #111827;
+    }
+
+    .eyebrow {
+      color: #aab7c8;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+
+    .meta {
+      color: #cbd5e1;
+      font-size: 14px;
+      max-width: 960px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .metric span {
+      display: block;
+      color: #b8c4d6;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .verdict {
+      border-left: 6px solid var(--green);
+    }
+
+    .issue {
+      border-left: 6px solid var(--yellow);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pill.green { background: var(--green-soft); color: #166534; }
+    .pill.yellow { background: var(--yellow-soft); color: #8a5c00; }
+    .pill.red { background: var(--red-soft); color: #991b1b; }
+    .pill.blue { background: var(--blue-soft); color: #1d4ed8; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .dot.green { background: var(--green); }
+    .dot.yellow { background: var(--yellow); }
+    .dot.red { background: var(--red); }
+    .dot.blue { background: var(--blue); }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      margin: 12px 0 4px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 11px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf2f7;
+      color: #314155;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    td.num, th.num { text-align: right; }
+    tr.total td { font-weight: 800; background: #f8fafc; }
+
+    .callouts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .callout {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .actions {
+      counter-reset: action;
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .action {
+      position: relative;
+      padding: 15px 16px 15px 58px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .action::before {
+      counter-increment: action;
+      content: counter(action);
+      position: absolute;
+      left: 16px;
+      top: 15px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .metric-grid, .split, .callouts { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .wrap { padding: 18px 12px 36px; }
+      .hero, .section { padding: 18px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">KICKS CREW ADS ME</div>
+      <h1>April 2026 Monthly Report vs March</h1>
+      <p class="meta">Published May 3, 2026 · Sources: Google Ads + Meta Ads + Snapchat Ads + GA4 ME + Shopify (Windsor.ai) · April Shopify reconciled to Admin · March comparison uses the 6-month review baseline.</p>
+      <div class="metric-grid">
+        <div class="metric"><span>April ROAS</span><strong>9.85x</strong></div>
+        <div class="metric"><span>April CPO</span><strong>$21.06</strong></div>
+        <div class="metric"><span>Platform Revenue</span><strong>$600K</strong></div>
+        <div class="metric"><span>Shopify ME Revenue</span><strong>$468K</strong></div>
+      </div>
+      <div class="legend">
+        <span class="pill green"><span class="dot green"></span> Strong</span>
+        <span class="pill yellow"><span class="dot yellow"></span> Watch</span>
+        <span class="pill red"><span class="dot red"></span> Fix</span>
+        <span class="pill blue"><span class="dot blue"></span> Context</span>
+      </div>
+    </section>
+
+    <section class="section verdict">
+      <h2>Monthly Verdict <span class="pill green"><span class="dot green"></span> ROAS 9.85x</span> <span class="pill green"><span class="dot green"></span> CPO $21.06</span></h2>
+      <p>April was a clear efficiency recovery after March. Spend increased from $47.1K to $60.9K, but revenue grew much faster, from $358.8K to $600.1K. That lifted blended ROAS from 7.62x to 9.85x and brought CPO down from $25.58 to $21.06, moving the account back under the $22 healthy threshold.</p>
+    </section>
+
+    <section class="section issue">
+      <h2>#1 Issue <span class="pill yellow"><span class="dot yellow"></span> Budget Scale Gap</span></h2>
+      <p>April proved the account can run efficiently, but it deployed only $60.9K, around 31% of the $197.5K April OKR budget model. The next problem is not whether paid media works; it is where we can safely scale without breaking CPO.</p>
+    </section>
+
+    <section class="section">
+      <h2>April vs March at a Glance</h2>
+      <table>
+        <thead><tr><th>Metric</th><th class="num">March</th><th class="num">April</th><th class="num">MoM</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Blended Spend</td><td class="num">$47,079</td><td class="num">$60,906</td><td class="num">+29.4%</td><td><span class="pill blue"><span class="dot blue"></span> More fuel</span></td></tr>
+          <tr><td>Blended Revenue</td><td class="num">$358,817</td><td class="num">$600,131</td><td class="num">+67.3%</td><td><span class="pill green"><span class="dot green"></span> Strong</span></td></tr>
+          <tr><td>Blended ROAS</td><td class="num">7.62x</td><td class="num">9.85x</td><td class="num">+29.3%</td><td><span class="pill green"><span class="dot green"></span> Above 7x</span></td></tr>
+          <tr><td>Blended CPO</td><td class="num">$25.58</td><td class="num">$21.06</td><td class="num">-17.7%</td><td><span class="pill green"><span class="dot green"></span> Under $22</span></td></tr>
+          <tr><td>GA4 ME Revenue</td><td class="num">$433,716</td><td class="num">$483,646</td><td class="num">+11.5%</td><td><span class="pill green"><span class="dot green"></span> Improved</span></td></tr>
+          <tr><td>GA4 ME Purchases</td><td class="num">2,132</td><td class="num">2,353</td><td class="num">+10.4%</td><td><span class="pill green"><span class="dot green"></span> Improved</span></td></tr>
+          <tr><td>Shopify ME Revenue</td><td class="num">n/a</td><td class="num">$468,276</td><td class="num">n/a</td><td><span class="pill blue"><span class="dot blue"></span> Ground truth</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Channel Breakdown</h2>
+      <h3>Google Ads <span class="pill green"><span class="dot green"></span> ROAS 9.25x</span> <span class="pill green"><span class="dot green"></span> CPO $21.73</span></h3>
+      <table>
+        <thead><tr><th>Campaign</th><th class="num">Spend</th><th class="num">Revenue</th><th class="num">ROAS</th><th class="num">CPO</th><th class="num">Conv</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>AE-Sales-Performance-Max #NEW</td><td class="num">$12,408</td><td class="num">$156,760</td><td class="num">12.6x</td><td class="num">$16.43</td><td class="num">755</td><td><span class="pill green"><span class="dot green"></span> Scale</span></td></tr>
+          <tr><td>KicksCrew -Performance max- SA</td><td class="num">$10,668</td><td class="num">$93,565</td><td class="num">8.8x</td><td class="num">$21.97</td><td class="num">486</td><td><span class="pill green"><span class="dot green"></span> Healthy</span></td></tr>
+          <tr><td>KicksCrew -Shop Conversion - SA</td><td class="num">$9,140</td><td class="num">$53,433</td><td class="num">5.8x</td><td class="num">$33.80</td><td class="num">270</td><td><span class="pill red"><span class="dot red"></span> Fix</span></td></tr>
+          <tr><td>KicksCrew -Performance max- KU</td><td class="num">$2,393</td><td class="num">$15,629</td><td class="num">6.5x</td><td class="num">$30.47</td><td class="num">78</td><td><span class="pill yellow"><span class="dot yellow"></span> Watch</span></td></tr>
+          <tr class="total"><td>Total</td><td class="num">$34,713</td><td class="num">$321,213</td><td class="num">9.25x</td><td class="num">$21.73</td><td class="num">1,598</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Meta Ads <span class="pill green"><span class="dot green"></span> ROAS 9.99x</span> <span class="pill green"><span class="dot green"></span> CPO $21.53</span></h3>
+      <table>
+        <thead><tr><th>Campaign</th><th class="num">Spend</th><th class="num">Revenue</th><th class="num">ROAS</th><th class="num">CPO</th><th class="num">Purchases</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>KC Catalog sales 4.0</td><td class="num">$8,141</td><td class="num">$75,764</td><td class="num">9.3x</td><td class="num">$20.56</td><td class="num">396</td><td><span class="pill green"><span class="dot green"></span> Stable</span></td></tr>
+          <tr><td>Pokemon Cards KSA & UAE</td><td class="num">$1,903</td><td class="num">$36,581</td><td class="num">19.2x</td><td class="num">$12.36</td><td class="num">154</td><td><span class="pill green"><span class="dot green"></span> Scale</span></td></tr>
+          <tr><td>2604_ASC_UAE_ROAS</td><td class="num">$316</td><td class="num">$4,799</td><td class="num">15.2x</td><td class="num">$15.79</td><td class="num">20</td><td><span class="pill green"><span class="dot green"></span> Strong split</span></td></tr>
+          <tr><td>New Format Test KSA</td><td class="num">$3,323</td><td class="num">$23,453</td><td class="num">7.1x</td><td class="num">$31.35</td><td class="num">106</td><td><span class="pill yellow"><span class="dot yellow"></span> High CPO</span></td></tr>
+          <tr><td>2604_ASC_KSA_ROAS</td><td class="num">$385</td><td class="num">$914</td><td class="num">2.4x</td><td class="num">$76.98</td><td class="num">5</td><td><span class="pill red"><span class="dot red"></span> Rework</span></td></tr>
+          <tr><td>2604_ASC_EG_ROAS</td><td class="num">$117</td><td class="num">$279</td><td class="num">2.4x</td><td class="num">$116.60</td><td class="num">1</td><td><span class="pill red"><span class="dot red"></span> Pause</span></td></tr>
+          <tr class="total"><td>Total</td><td class="num">$24,074</td><td class="num">$240,444</td><td class="num">9.99x</td><td class="num">$21.53</td><td class="num">1,118</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Snapchat Ads <span class="pill green"><span class="dot green"></span> ROAS 18.16x</span> <span class="pill green"><span class="dot green"></span> CPP $12.04</span></h3>
+      <table>
+        <thead><tr><th>Campaign</th><th class="num">Spend</th><th class="num">Revenue</th><th class="num">ROAS</th><th class="num">Purchases</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Sales Test KSA</td><td class="num">$1,670</td><td class="num">$33,444</td><td class="num">20.0x</td><td class="num">155</td><td><span class="pill green"><span class="dot green"></span> Scale</span></td></tr>
+          <tr><td>Sales Test UAE</td><td class="num">$449</td><td class="num">$5,030</td><td class="num">11.2x</td><td class="num">21</td><td><span class="pill green"><span class="dot green"></span> Healthy</span></td></tr>
+          <tr class="total"><td>Total</td><td class="num">$2,119</td><td class="num">$38,475</td><td class="num">18.16x</td><td class="num">176</td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>What Got Stronger After the March Split / Restructure</h2>
+      <table>
+        <thead><tr><th>Area</th><th>Before / March</th><th>After / April</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Blended efficiency</td><td>7.62x ROAS, $25.58 CPO</td><td>9.85x ROAS, $21.06 CPO</td><td><span class="pill green"><span class="dot green"></span> Better</span></td></tr>
+          <tr><td>Google</td><td>6.67x ROAS, $27.70 CPO</td><td>9.25x ROAS, $21.73 CPO</td><td><span class="pill green"><span class="dot green"></span> Recovered</span></td></tr>
+          <tr><td>Meta split</td><td>Mixed ME campaign reads</td><td>UAE ASC worked; KSA/GCC/EG exposed as weak</td><td><span class="pill blue"><span class="dot blue"></span> Clearer</span></td></tr>
+          <tr><td>Product bursts</td><td>Small Pokemon signal</td><td>$36.6K at 19.2x ROAS</td><td><span class="pill green"><span class="dot green"></span> Repeatable</span></td></tr>
+          <tr><td>Snapchat</td><td>$541 spend, $0 revenue</td><td>$38.5K at 18.16x ROAS</td><td><span class="pill green"><span class="dot green"></span> New scale lane</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Strong Things</h2>
+        <div class="callouts">
+          <div class="callout"><span class="pill green"><span class="dot green"></span> Snapchat KSA</span><strong>20.0x ROAS</strong><p class="muted">Best underfunded scale lane.</p></div>
+          <div class="callout"><span class="pill green"><span class="dot green"></span> Pokemon Meta</span><strong>19.2x ROAS</strong><p class="muted">Product-burst playbook is proven.</p></div>
+          <div class="callout"><span class="pill green"><span class="dot green"></span> AE PMax</span><strong>$156.8K revenue</strong><p class="muted">New UAE scale engine.</p></div>
+        </div>
+      </div>
+      <div>
+        <h2>Weak Things</h2>
+        <div class="callouts">
+          <div class="callout"><span class="pill red"><span class="dot red"></span> SA Shop Conversion</span><strong>$33.80 CPO</strong><p class="muted">Audit feed, bidding, and queries.</p></div>
+          <div class="callout"><span class="pill red"><span class="dot red"></span> ASC KSA/EG</span><strong>2.4x ROAS</strong><p class="muted">Pause or rebuild creative logic.</p></div>
+          <div class="callout"><span class="pill yellow"><span class="dot yellow"></span> Attribution Gap</span><strong>+28.2%</strong><p class="muted">Keep Shopify as ground truth.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Shopify ME Ground Truth</h2>
+      <table>
+        <thead><tr><th>Country</th><th class="num">Gross Sales</th><th class="num">Orders</th><th class="num">Net Sales</th></tr></thead>
+        <tbody>
+          <tr><td>Saudi Arabia</td><td class="num">$227,741</td><td class="num">1,297</td><td class="num">$223,439</td></tr>
+          <tr><td>United Arab Emirates</td><td class="num">$201,960</td><td class="num">1,056</td><td class="num">$200,596</td></tr>
+          <tr><td>Kuwait</td><td class="num">$24,053</td><td class="num">116</td><td class="num">$23,886</td></tr>
+          <tr><td>Qatar</td><td class="num">$9,296</td><td class="num">34</td><td class="num">$9,265</td></tr>
+          <tr><td>Bahrain</td><td class="num">$2,266</td><td class="num">11</td><td class="num">$2,262</td></tr>
+          <tr><td>Oman</td><td class="num">$667</td><td class="num">5</td><td class="num">$647</td></tr>
+          <tr class="total"><td>ME Total</td><td class="num">$468,276</td><td class="num">2,532</td><td class="num">$465,389</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">AOV was $184.96, above the $175 target. KSA and UAE together delivered 91.8% of ME revenue.</p>
+    </section>
+
+    <section class="section">
+      <h2>Revenue Cross-Check Triangle</h2>
+      <table>
+        <thead><tr><th>Source</th><th class="num">Revenue</th><th class="num">Orders</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Ad Platforms</td><td class="num">$600,131</td><td class="num">~2,892 conv</td><td>Platform-reported</td></tr>
+          <tr><td>GA4 ME Total</td><td class="num">$483,646</td><td class="num">2,353 transactions</td><td>Neutral cross-check</td></tr>
+          <tr class="total"><td>Shopify ME</td><td class="num">$468,276</td><td class="num">2,532 orders</td><td>Ground truth</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">GA4 was only +3.3% above Shopify, so GA4 and Shopify agree closely. The larger gap is mainly platform attribution.</p>
+    </section>
+
+    <section class="section">
+      <h2>Top 3 Actions for Ihab - May 2026</h2>
+      <div class="actions">
+        <div class="action"><strong>Scale the proven winners, not the whole account.</strong><p>Increase Snapchat KSA, AE PMax, and Pokemon-style Meta bursts first. Keep increments controlled and review CPO every 48-72 hours.</p></div>
+        <div class="action"><strong>Cut or rebuild weak post-split Meta lanes.</strong><p>Pause or rebuild 2604_ASC_KSA, 2604_ASC_GCC, 2604_ASC_EG, and 2604_KSA_manual. Keep the split architecture, but change the creative and market assumptions.</p></div>
+        <div class="action"><strong>Fix Google drag before adding more spend.</strong><p>SA Shop Conversion and KU PMax are the main Google leaks. Audit feed quality, bidding, and search/product mix, then move budget into stronger PMax lanes.</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

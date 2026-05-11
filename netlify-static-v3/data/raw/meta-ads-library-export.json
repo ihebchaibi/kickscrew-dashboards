@@ -1,0 +1,499 @@
+{
+  "meta": {
+    "project": "KICKS CREW ME Creative Intelligence",
+    "updatedAt": "2026-05-10",
+    "refreshSource": "https://kickscrew-dashboards.vercel.app/api/refresh",
+    "period": "Live KPI refresh plus local strategic dataset",
+    "source": "Meta benchmark feed",
+    "confidence": "Top-line KPIs refresh automatically. Creative rows, hooks, taxonomy, and briefs are structured samples until Motion/Meta row-level APIs are exposed.",
+    "trackedBrands": [
+      "KICKS CREW",
+      "StockX",
+      "GOAT",
+      "Stadium Goods",
+      "Namshi",
+      "SHEIN Arabic",
+      "OUNASS",
+      "Level Shoes"
+    ],
+    "trackedRegions": [
+      "Saudi Arabia",
+      "UAE",
+      "Kuwait",
+      "Qatar",
+      "Bahrain",
+      "Oman"
+    ],
+    "taxonomy": {
+      "assetType": [
+        "UGC",
+        "Product Card",
+        "Creator Spark",
+        "Carousel",
+        "Editorial",
+        "Offer"
+      ],
+      "hookTactic": [
+        "Question",
+        "Product Reveal",
+        "Price Shock",
+        "Drop Alert",
+        "Social Proof",
+        "Delivery Promise"
+      ],
+      "visualFormat": [
+        "On-foot",
+        "Unboxing",
+        "Catalog Grid",
+        "Street Scene",
+        "Luxury Still",
+        "App Demo"
+      ],
+      "messagingTheme": [
+        "Authenticity",
+        "Limited Drop",
+        "Discount",
+        "Fast Delivery",
+        "Premium Service",
+        "Trend Discovery"
+      ],
+      "intendedAudience": [
+        "Sneakerheads",
+        "GCC Youth",
+        "Luxury Shoppers",
+        "Value Seekers",
+        "Collectors"
+      ],
+      "headlineTactic": [
+        "Direct CTA",
+        "Question",
+        "Urgency",
+        "Benefit-led",
+        "Collection-led"
+      ],
+      "offerType": [
+        "None",
+        "Percent Off",
+        "Free Shipping",
+        "Limited Drop",
+        "Bundle"
+      ],
+      "seasonality": [
+        "Always-on",
+        "Eid",
+        "Summer",
+        "Back to School",
+        "Payday"
+      ]
+    },
+    "platform": "Meta"
+  },
+  "creatives": [
+    {
+      "brand": "KICKS CREW",
+      "side": "own",
+      "format": "video",
+      "region": "Saudi Arabia",
+      "headline": "Nike Mind 001 restock is live",
+      "copy": "Authenticated pairs, GCC shipping, limited sizes.",
+      "hookText": "You missed it once. Do not miss the restock.",
+      "roas": 11.8,
+      "cpaUsd": 14.4,
+      "hookRate": 36,
+      "spendUsd": 920,
+      "activeDays": 9,
+      "taxonomy": [
+        "Product Reveal",
+        "Drop Alert",
+        "Limited Drop",
+        "Sneakerheads",
+        "On-foot",
+        "Urgency"
+      ],
+      "insight": "KC wins when the hook names a specific restock and creates immediate size pressure.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "KICKS CREW",
+      "side": "own",
+      "format": "image",
+      "region": "UAE",
+      "headline": "Authenticated sneakers, delivered to the Gulf",
+      "copy": "Shop Nike, Jordan, New Balance, and rare drops.",
+      "hookText": "Authenticity first. No guesswork.",
+      "roas": 9.7,
+      "cpaUsd": 16.1,
+      "hookRate": 24,
+      "spendUsd": 680,
+      "activeDays": 14,
+      "taxonomy": [
+        "Product Card",
+        "Authenticity",
+        "Direct CTA",
+        "Always-on",
+        "Collectors"
+      ],
+      "insight": "Strong evergreen trust creative, but weaker hook rate than restock-led video.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "KICKS CREW",
+      "side": "own",
+      "format": "video",
+      "region": "Kuwait",
+      "headline": "Three summer sneakers under the radar",
+      "copy": "Light rotation for GCC heat.",
+      "hookText": "Stop buying the same white sneaker.",
+      "roas": 6.4,
+      "cpaUsd": 23.6,
+      "hookRate": 31,
+      "spendUsd": 340,
+      "activeDays": 6,
+      "taxonomy": [
+        "UGC",
+        "Question",
+        "Trend Discovery",
+        "GCC Youth",
+        "Street Scene",
+        "Summer"
+      ],
+      "insight": "Hook works, economics need product/landing alignment.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "StockX",
+      "side": "competitor",
+      "format": "video",
+      "region": "Saudi Arabia",
+      "headline": "520 Heat Check",
+      "copy": "Trending pairs and resale energy.",
+      "hookText": "Which pair is winning this week?",
+      "roas": 8.5,
+      "cpaUsd": 18.8,
+      "hookRate": 33,
+      "spendUsd": 1450,
+      "activeDays": 31,
+      "taxonomy": [
+        "Creator Spark",
+        "Question",
+        "Social Proof",
+        "Sneakerheads",
+        "Street Scene",
+        "Payday"
+      ],
+      "insight": "StockX repeatedly opens with questions and weekly heat framing.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "StockX",
+      "side": "competitor",
+      "format": "image",
+      "region": "UAE",
+      "headline": "Secure your pair today",
+      "copy": "Buy, sell, bid on authenticated sneakers.",
+      "hookText": "Secure your pair today.",
+      "roas": 7.9,
+      "cpaUsd": 19.5,
+      "hookRate": 19,
+      "spendUsd": 760,
+      "activeDays": 24,
+      "taxonomy": [
+        "Product Card",
+        "Authenticity",
+        "Direct CTA",
+        "Collectors",
+        "Catalog Grid",
+        "Always-on"
+      ],
+      "insight": "Less hooky than video but useful for trust and retargeting.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "GOAT",
+      "side": "competitor",
+      "format": "video",
+      "region": "UAE",
+      "headline": "Top drops of 2026",
+      "copy": "New releases and authenticated resale.",
+      "hookText": "These are the drops people will regret missing.",
+      "roas": 9.1,
+      "cpaUsd": 17.2,
+      "hookRate": 35,
+      "spendUsd": 980,
+      "activeDays": 18,
+      "taxonomy": [
+        "UGC",
+        "Drop Alert",
+        "Limited Drop",
+        "Collectors",
+        "Unboxing",
+        "Urgency"
+      ],
+      "insight": "Regret-based hooks pair well with launch calendars.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "Stadium Goods",
+      "side": "competitor",
+      "format": "image",
+      "region": "Saudi Arabia",
+      "headline": "Air Jordan 4 Toro Bravo",
+      "copy": "Premium sneaker collection.",
+      "hookText": "A clean hero SKU card.",
+      "roas": 7.2,
+      "cpaUsd": 20.7,
+      "hookRate": 16,
+      "spendUsd": 520,
+      "activeDays": 22,
+      "taxonomy": [
+        "Product Card",
+        "Product Reveal",
+        "Limited Drop",
+        "Sneakerheads",
+        "Catalog Grid",
+        "Always-on"
+      ],
+      "insight": "Static product cards are simple but active long enough to imply stable economics.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "Namshi",
+      "side": "competitor",
+      "format": "image",
+      "region": "Saudi Arabia",
+      "headline": "Flash sale - 50 percent off",
+      "copy": "Broad fashion discount push.",
+      "hookText": "50 percent off today.",
+      "roas": 5.2,
+      "cpaUsd": 24.3,
+      "hookRate": 18,
+      "spendUsd": 310,
+      "activeDays": 4,
+      "taxonomy": [
+        "Offer",
+        "Price Shock",
+        "Discount",
+        "Value Seekers",
+        "Catalog Grid",
+        "Payday"
+      ],
+      "insight": "Low current threat, but discount spikes can steal CPM efficiency.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "SHEIN Arabic",
+      "side": "competitor",
+      "format": "video",
+      "region": "Saudi Arabia",
+      "headline": "Eid code 26Eid",
+      "copy": "Arabic-first Eid collection and coupon.",
+      "hookText": "Use the Eid code before the collection sells out.",
+      "roas": 9.4,
+      "cpaUsd": 15.9,
+      "hookRate": 39,
+      "spendUsd": 2200,
+      "activeDays": 37,
+      "taxonomy": [
+        "Offer",
+        "Price Shock",
+        "Discount",
+        "GCC Youth",
+        "Catalog Grid",
+        "Eid"
+      ],
+      "insight": "SHEIN wins through aggressive Arabic offer repetition and fast SKU rotation.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "OUNASS",
+      "side": "competitor",
+      "format": "video",
+      "region": "UAE",
+      "headline": "Luxury perfumes with 2-hour delivery",
+      "copy": "Premium retail service promise.",
+      "hookText": "Need it tonight? OUNASS delivers in two hours.",
+      "roas": 10.2,
+      "cpaUsd": 14.8,
+      "hookRate": 42,
+      "spendUsd": 1350,
+      "activeDays": 45,
+      "taxonomy": [
+        "Editorial",
+        "Delivery Promise",
+        "Fast Delivery",
+        "Luxury Shoppers",
+        "Luxury Still",
+        "Always-on"
+      ],
+      "insight": "The delivery promise is the strongest service hook in the GCC set.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    },
+    {
+      "brand": "Level Shoes",
+      "side": "competitor",
+      "format": "image",
+      "region": "UAE",
+      "headline": "Designer sneakers and luxury footwear",
+      "copy": "Curated premium footwear destination.",
+      "hookText": "Luxury footwear, curated for the region.",
+      "roas": 8.1,
+      "cpaUsd": 18.6,
+      "hookRate": 23,
+      "spendUsd": 860,
+      "activeDays": 28,
+      "taxonomy": [
+        "Editorial",
+        "Premium Service",
+        "Collection-led",
+        "Luxury Shoppers",
+        "Luxury Still",
+        "Always-on"
+      ],
+      "insight": "Level Shoes should be tracked as a GCC-native premium benchmark.",
+      "platform": "Meta",
+      "sourcePlatform": "Meta"
+    }
+  ],
+  "intelligence": [
+    {
+      "priority": "High",
+      "title": "Turn KC restocks into the main video lane",
+      "why": "KC restock videos beat the competitor average ROAS and have a 36 percent hook rate.",
+      "action": "Launch 3 variants: regret hook, size scarcity hook, and on-foot reveal hook."
+    },
+    {
+      "priority": "High",
+      "title": "Borrow OUNASS service clarity",
+      "why": "OUNASS has the strongest hook rate by using a concrete delivery promise.",
+      "action": "Test GCC shipping/authenticity promise in the first 2 seconds, not only in captions."
+    },
+    {
+      "priority": "Medium",
+      "title": "Add Level Shoes as always-on GCC benchmark",
+      "why": "Level Shoes is a regional luxury footwear competitor, closer to UAE/KSA premium intent than US resale brands.",
+      "action": "Track Level Shoes creative age and luxury service messaging weekly."
+    },
+    {
+      "priority": "Medium",
+      "title": "Build taxonomy reporting before adding more charts",
+      "why": "Hook tactic and messaging theme explain action better than raw creative count.",
+      "action": "Use Motion taxonomy fields as first-class filters in every review."
+    }
+  ],
+  "creativeBriefs": [
+    {
+      "title": "Nike Mind 001 Restock: Size Pressure",
+      "format": "9:16 UGC video",
+      "audience": "25-34 male sneaker buyers in KSA",
+      "hook": "You missed it once. Do not miss the restock.",
+      "scenes": [
+        "Close-up box open",
+        "On-foot side profile",
+        "Size overlay",
+        "Checkout CTA"
+      ],
+      "why": "Combines KC's strongest restock signal with StockX-style urgency."
+    },
+    {
+      "title": "GCC Authenticity Promise",
+      "format": "Static plus 6s cutdown",
+      "audience": "Collectors in UAE and KSA",
+      "hook": "Authenticity first. No guesswork.",
+      "scenes": [
+        "Hero pair",
+        "Verification stamp",
+        "GCC delivery line",
+        "Shop authenticated"
+      ],
+      "why": "Uses KC trust advantage against marketplace anxiety."
+    },
+    {
+      "title": "Luxury Service Counterpunch",
+      "format": "Premium editorial video",
+      "audience": "Luxury shoppers in UAE",
+      "hook": "Rare sneakers, authenticated for the Gulf.",
+      "scenes": [
+        "Minimal product still",
+        "Fast delivery/service copy",
+        "Premium packaging",
+        "App/site CTA"
+      ],
+      "why": "Responds to OUNASS and Level Shoes with service quality instead of discounting."
+    }
+  ],
+  "demographicHeatmap": [
+    {
+      "region": "Saudi Arabia",
+      "age": "18-24",
+      "gender": "Male",
+      "roas": 8.6
+    },
+    {
+      "region": "Saudi Arabia",
+      "age": "25-34",
+      "gender": "Male",
+      "roas": 12.4
+    },
+    {
+      "region": "Saudi Arabia",
+      "age": "25-34",
+      "gender": "Female",
+      "roas": 7.1
+    },
+    {
+      "region": "UAE",
+      "age": "18-24",
+      "gender": "Male",
+      "roas": 7.8
+    },
+    {
+      "region": "UAE",
+      "age": "25-34",
+      "gender": "Male",
+      "roas": 10.9
+    },
+    {
+      "region": "UAE",
+      "age": "25-34",
+      "gender": "Female",
+      "roas": 8.3
+    },
+    {
+      "region": "Kuwait",
+      "age": "25-34",
+      "gender": "Male",
+      "roas": 6.8
+    },
+    {
+      "region": "Qatar",
+      "age": "25-34",
+      "gender": "Male",
+      "roas": 7.5
+    }
+  ],
+  "latestRefresh": {
+    "source": "https://kickscrew-dashboards.vercel.app/api/refresh",
+    "pulledAt": "2026-05-10T21:01:32+00:00",
+    "endpointTimestamp": "2026-05-10T21:01:32.044Z",
+    "status": "success",
+    "message": "Dashboard refresh completed",
+    "metrics": {
+      "totalCreatives": 20,
+      "videoCount": 14,
+      "imageCount": 6,
+      "brandsTracked": 6,
+      "totalSpend": 14250,
+      "avgRoas": 8.2
+    }
+  }
+}

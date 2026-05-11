@@ -1,0 +1,37 @@
+[
+  {
+    "campaign": "2604_ASC_KSA_ROAS",
+    "campaign_id": "120248862333180191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_ASC_UAE_ROAS",
+    "campaign_id": "120248862343630191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_ASC_GCC_ROAS",
+    "campaign_id": "120248862349350191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_ASC_EG_ROAS",
+    "campaign_id": "120248862349900191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_ME_conversion_DPA",
+    "campaign_id": "120248862350340191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_ME_conversion_manual",
+    "campaign_id": "120246945728210191",
+    "adsets": []
+  },
+  {
+    "campaign": "2604_KSA_manual",
+    "campaign_id": "120248862353550191",
+    "adsets": []
+  }
+]

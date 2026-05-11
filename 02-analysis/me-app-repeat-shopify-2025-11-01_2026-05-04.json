@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-05-05T13:53:59.047172+00:00",
+  "source": "Shopify Admin GraphQL bulk export via connected Shopify app",
+  "rows_read": 85160,
+  "unique_orders_seen": 85160,
+  "me_orders_kept": 4511,
+  "baseline": {
+    "date_from": "2025-11-01",
+    "date_to": "2026-05-04",
+    "countries": {
+      "UAE": {
+        "orders": 1855,
+        "repeat_orders": 700,
+        "repeat_rate": 0.3774,
+        "app_direct_orders": 451,
+        "app_order_share": 0.2431,
+        "revenue": 427904.54
+      },
+      "KSA": {
+        "orders": 2405,
+        "repeat_orders": 926,
+        "repeat_rate": 0.385,
+        "app_direct_orders": 738,
+        "app_order_share": 0.3069,
+        "revenue": 499254.88
+      },
+      "Kuwait": {
+        "orders": 172,
+        "repeat_orders": 76,
+        "repeat_rate": 0.4419,
+        "app_direct_orders": 42,
+        "app_order_share": 0.2442,
+        "revenue": 40012.9
+      },
+      "Qatar": {
+        "orders": 67,
+        "repeat_orders": 30,
+        "repeat_rate": 0.4478,
+        "app_direct_orders": 19,
+        "app_order_share": 0.2836,
+        "revenue": 18004.52
+      },
+      "Bahrain": {
+        "orders": 12,
+        "repeat_orders": 11,
+        "repeat_rate": 0.9167,
+        "app_direct_orders": 2,
+        "app_order_share": 0.1667,
+        "revenue": 2675.03
+      }
+    },
+    "total": {
+      "orders": 4511,
+      "repeat_orders": 1743,
+      "repeat_rate": 0.3864,
+      "app_direct_orders": 1252,
+      "app_order_share": 0.2775,
+      "revenue": 987851.87
+    }
+  },
+  "recent": {
+    "date_from": "2026-03-01",
+    "date_to": "2026-05-04",
+    "countries": {
+      "UAE": {
+        "orders": 1855,
+        "repeat_orders": 700,
+        "repeat_rate": 0.3774,
+        "app_direct_orders": 451,
+        "app_order_share": 0.2431,
+        "revenue": 427904.54
+      },
+      "KSA": {
+        "orders": 2405,
+        "repeat_orders": 926,
+        "repeat_rate": 0.385,
+        "app_direct_orders": 738,
+        "app_order_share": 0.3069,
+        "revenue": 499254.88
+      },
+      "Kuwait": {
+        "orders": 172,
+        "repeat_orders": 76,
+        "repeat_rate": 0.4419,
+        "app_direct_orders": 42,
+        "app_order_share": 0.2442,
+        "revenue": 40012.9
+      },
+      "Qatar": {
+        "orders": 67,
+        "repeat_orders": 30,
+        "repeat_rate": 0.4478,
+        "app_direct_orders": 19,
+        "app_order_share": 0.2836,
+        "revenue": 18004.52
+      },
+      "Bahrain": {
+        "orders": 12,
+        "repeat_orders": 11,
+        "repeat_rate": 0.9167,
+        "app_direct_orders": 2,
+        "app_order_share": 0.1667,
+        "revenue": 2675.03
+      }
+    },
+    "total": {
+      "orders": 4511,
+      "repeat_orders": 1743,
+      "repeat_rate": 0.3864,
+      "app_direct_orders": 1252,
+      "app_order_share": 0.2775,
+      "revenue": 987851.87
+    }
+  },
+  "targets": {
+    "app_order_share": 0.5,
+    "repeat_rate": 0.35
+  }
+}

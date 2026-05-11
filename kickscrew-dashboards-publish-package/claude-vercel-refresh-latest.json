@@ -1,0 +1,15 @@
+{
+  "source": "https://kickscrew-dashboards.vercel.app/api/refresh",
+  "pulledAt": "2026-05-10T19:57:10+00:00",
+  "endpointTimestamp": "2026-05-10T19:57:09.866Z",
+  "status": "success",
+  "message": "Dashboard refresh completed",
+  "metrics": {
+    "totalCreatives": 20,
+    "videoCount": 11,
+    "imageCount": 9,
+    "brandsTracked": 6,
+    "totalSpend": 14250,
+    "avgRoas": 8.2
+  }
+}
