@@ -120,31 +120,64 @@ function writeCache(platform, data) {
 
 async function fetchTikTokCreatives() {
   try {
-    // TikTok Public Ads Library API
-    // This endpoint aggregates public TikTok ads for tracked competitors
-    const url = 'https://ads.tiktok.com/sandbox/v2/library/advertiser/search?countries=AE,SA,KW,QA,BH,OM&languages=ar';
-    const data = await httpsGet(url);
+    // TikTok Public Ads Library - using web scraping approach
+    // Fetch from TikTok's public ads library portal
+    const competitors = COMPETITORS.tiktok.map(c => c.keywords).join(',');
+    const url = `https://www.tiktok.com/api/v1/search/ads?q=${encodeURIComponent(competitors)}&region=ae&language=ar`;
+
+    try {
+      const data = await httpsGet(url);
+      if (data && data.ads) {
+        return {
+          platform: 'tiktok',
+          source: 'TikTok Ads Library',
+          isLive: true,
+          creatives: data.ads.slice(0, 50).map(ad => ({
+            brand: ad.advertiser_name || 'StockX',
+            side: 'competitor',
+            format: 'video',
+            region: 'GCC',
+            headline: ad.ad_name || 'TikTok Ad',
+            copy: ad.description || '',
+            hookText: (ad.description || '').slice(0, 100),
+            roas: (Math.random() * 4 + 1).toFixed(1),
+            cpaUsd: (Math.random() * 50 + 10).toFixed(0),
+            hookRate: Math.floor(Math.random() * 100),
+            spendUsd: Math.floor(Math.random() * 5000 + 500),
+            activeDays: Math.floor(Math.random() * 90 + 7),
+            taxonomy: ['video', 'product-showcase', 'trend'],
+            insight: 'Strong TikTok engagement',
+            thumbnailUrl: ad.thumbnail_url || '',
+            videoUrl: ad.video_url || '',
+            mediaType: 'video'
+          }))
+        };
+      }
+    } catch (e) {
+      console.log('Live TikTok API failed, using fallback');
+    }
+
+    // Fallback: return sample data with isLive flag
     return {
       platform: 'tiktok',
       source: 'TikTok Ads Library',
-      creatives: (data.creatives || []).map(ad => ({
-        brand: ad.advertiser_name || 'Unknown',
+      isLive: false,
+      creatives: COMPETITORS.tiktok.slice(0, 5).map((comp, i) => ({
+        brand: comp.name,
         side: 'competitor',
-        format: ad.video_url ? 'video' : 'image',
-        region: ad.country_region || 'GCC',
-        headline: ad.title || 'Untitled',
-        copy: ad.description || '',
-        hookText: (ad.primary_text || ad.description || '').slice(0, 100),
-        roas: Math.random() * 4 + 1, // Estimated
-        cpaUsd: Math.random() * 50 + 10,
-        hookRate: Math.random() * 100,
-        spendUsd: Math.random() * 5000 + 500,
+        format: 'video',
+        region: 'GCC',
+        headline: `${comp.name} Campaign`,
+        copy: `Latest ${comp.name} advertisement`,
+        hookText: `Check out this ${comp.name} creative`,
+        roas: (Math.random() * 4 + 1).toFixed(1),
+        cpaUsd: (Math.random() * 50 + 10).toFixed(0),
+        hookRate: Math.floor(Math.random() * 100),
+        spendUsd: Math.floor(Math.random() * 5000 + 500),
         activeDays: Math.floor(Math.random() * 90 + 7),
         taxonomy: ['video', 'product-showcase', 'trend'],
-        insight: 'Strong engagement on this hook',
-        thumbnailUrl: ad.image_url,
-        videoUrl: ad.video_url,
-        mediaType: ad.video_url ? 'video' : 'image'
+        insight: 'Sample TikTok creative',
+        mediaType: 'video'
       }))
     };
   } catch (error) {
@@ -155,29 +188,60 @@ async function fetchTikTokCreatives() {
 
 async function fetchMetaCreatives() {
   try {
-    // Meta Ads Library API (public)
+    // Meta Ads Library API (public) - requires access token but will fallback to sample
     const url = 'https://graph.facebook.com/v18.0/ads_archive?fields=id,name,status,ad_creation_time,ad_snapshot_url&access_token=' + (process.env.META_ACCESS_TOKEN || 'sample');
-    const data = await httpsGet(url);
+    try {
+      const data = await httpsGet(url);
+      if (data && data.ads && data.ads.length > 0) {
+        return {
+          platform: 'meta',
+          source: 'Meta Ads Library',
+          isLive: true,
+          creatives: data.ads.slice(0, 50).map(ad => ({
+            brand: ad.page_name || 'Unknown',
+            side: 'competitor',
+            format: 'image',
+            region: 'GCC',
+            headline: ad.name || 'Ad Campaign',
+            copy: '',
+            hookText: ad.name || '',
+            roas: (Math.random() * 4 + 1).toFixed(1),
+            cpaUsd: (Math.random() * 40 + 15).toFixed(0),
+            hookRate: Math.floor(Math.random() * 100),
+            spendUsd: Math.floor(Math.random() * 8000 + 1000),
+            activeDays: Math.floor(Math.random() * 120 + 10),
+            taxonomy: ['carousel', 'image', 'product'],
+            insight: 'Running across Meta family',
+            thumbnailUrl: ad.ad_snapshot_url,
+            videoUrl: null,
+            mediaType: 'image'
+          }))
+        };
+      }
+    } catch (e) {
+      console.log('Live Meta API failed, using fallback');
+    }
+
+    // Fallback: return sample data with isLive flag and competitor names
     return {
       platform: 'meta',
       source: 'Meta Ads Library',
-      creatives: (data.ads || []).slice(0, 50).map(ad => ({
-        brand: ad.page_name || 'Unknown',
+      isLive: false,
+      creatives: COMPETITORS.meta.slice(0, 5).map((comp, i) => ({
+        brand: comp.name,
         side: 'competitor',
         format: 'image',
         region: 'GCC',
-        headline: ad.name || 'Ad Campaign',
-        copy: '',
-        hookText: ad.name || '',
-        roas: Math.random() * 4 + 1,
-        cpaUsd: Math.random() * 40 + 15,
-        hookRate: Math.random() * 100,
-        spendUsd: Math.random() * 8000 + 1000,
+        headline: `${comp.name} Campaign`,
+        copy: `Latest ${comp.name} advertisement`,
+        hookText: `Check out this ${comp.name} creative`,
+        roas: (Math.random() * 4 + 1).toFixed(1),
+        cpaUsd: (Math.random() * 40 + 15).toFixed(0),
+        hookRate: Math.floor(Math.random() * 100),
+        spendUsd: Math.floor(Math.random() * 8000 + 1000),
         activeDays: Math.floor(Math.random() * 120 + 10),
         taxonomy: ['carousel', 'image', 'product'],
-        insight: 'Running across Meta family',
-        thumbnailUrl: ad.ad_snapshot_url,
-        videoUrl: null,
+        insight: 'Sample Meta creative',
         mediaType: 'image'
       }))
     };
@@ -191,27 +255,58 @@ async function fetchGoogleCreatives() {
   try {
     // Google Ads Transparency Center (public data)
     const url = 'https://adstransparencycenter.google.com/api/v1/advertiser_creatives?region=SA';
-    const data = await httpsGet(url);
+    try {
+      const data = await httpsGet(url);
+      if (data && data.creatives && data.creatives.length > 0) {
+        return {
+          platform: 'google',
+          source: 'Google Ads Library',
+          isLive: true,
+          creatives: data.creatives.slice(0, 50).map(ad => ({
+            brand: ad.advertiser_name || 'Unknown',
+            side: 'competitor',
+            format: ad.has_video ? 'video' : 'image',
+            region: 'GCC',
+            headline: ad.headline || 'Search Ad',
+            copy: ad.description || '',
+            hookText: ad.headline || '',
+            roas: (Math.random() * 3.5 + 1.5).toFixed(1),
+            cpaUsd: (Math.random() * 30 + 20).toFixed(0),
+            hookRate: Math.floor(Math.random() * 80 + 20),
+            spendUsd: Math.floor(Math.random() * 10000 + 2000),
+            activeDays: Math.floor(Math.random() * 180 + 14),
+            taxonomy: ['search', 'text', 'product-ad'],
+            insight: 'Search traffic driver',
+            thumbnailUrl: null,
+            videoUrl: null,
+            mediaType: 'image'
+          }))
+        };
+      }
+    } catch (e) {
+      console.log('Live Google API failed, using fallback');
+    }
+
+    // Fallback: return sample data with isLive flag and competitor names
     return {
       platform: 'google',
       source: 'Google Ads Library',
-      creatives: (data.creatives || []).slice(0, 50).map(ad => ({
-        brand: ad.advertiser_name || 'Unknown',
+      isLive: false,
+      creatives: COMPETITORS.google.slice(0, 5).map((comp, i) => ({
+        brand: comp.name,
         side: 'competitor',
-        format: ad.has_video ? 'video' : 'image',
+        format: 'image',
         region: 'GCC',
-        headline: ad.headline || 'Search Ad',
-        copy: ad.description || '',
-        hookText: ad.headline || '',
-        roas: Math.random() * 3.5 + 1.5,
-        cpaUsd: Math.random() * 30 + 20,
-        hookRate: Math.random() * 80 + 20,
-        spendUsd: Math.random() * 10000 + 2000,
+        headline: `${comp.name} Search Ad`,
+        copy: `Discover ${comp.name} products`,
+        hookText: `${comp.name} - Shop Now`,
+        roas: (Math.random() * 3.5 + 1.5).toFixed(1),
+        cpaUsd: (Math.random() * 30 + 20).toFixed(0),
+        hookRate: Math.floor(Math.random() * 80 + 20),
+        spendUsd: Math.floor(Math.random() * 10000 + 2000),
         activeDays: Math.floor(Math.random() * 180 + 14),
         taxonomy: ['search', 'text', 'product-ad'],
-        insight: 'Search traffic driver',
-        thumbnailUrl: null,
-        videoUrl: null,
+        insight: 'Sample Google search ad',
         mediaType: 'image'
       }))
     };
@@ -225,27 +320,58 @@ async function fetchSnapchatCreatives() {
   try {
     // Snapchat Ads Library (public)
     const url = 'https://ads.snapchat.com/api/v1/library/ads?region=ae';
-    const data = await httpsGet(url);
+    try {
+      const data = await httpsGet(url);
+      if (data && data.ads && data.ads.length > 0) {
+        return {
+          platform: 'snapchat',
+          source: 'Snapchat Ads Library',
+          isLive: true,
+          creatives: data.ads.slice(0, 30).map(ad => ({
+            brand: ad.advertiser_name || 'Unknown',
+            side: 'competitor',
+            format: 'video',
+            region: 'GCC',
+            headline: ad.title || 'Snap Ad',
+            copy: ad.body || '',
+            hookText: ad.headline || '',
+            roas: (Math.random() * 3 + 2).toFixed(1),
+            cpaUsd: (Math.random() * 25 + 15).toFixed(0),
+            hookRate: Math.floor(Math.random() * 100),
+            spendUsd: Math.floor(Math.random() * 3000 + 500),
+            activeDays: Math.floor(Math.random() * 60 + 7),
+            taxonomy: ['video', 'mobile', 'story'],
+            insight: 'Mobile-first creative',
+            thumbnailUrl: ad.preview_image,
+            videoUrl: ad.video_url,
+            mediaType: 'video'
+          }))
+        };
+      }
+    } catch (e) {
+      console.log('Live Snapchat API failed, using fallback');
+    }
+
+    // Fallback: return sample data with isLive flag and competitor names
     return {
       platform: 'snapchat',
       source: 'Snapchat Ads Library',
-      creatives: (data.ads || []).slice(0, 30).map(ad => ({
-        brand: ad.advertiser_name || 'Unknown',
+      isLive: false,
+      creatives: COMPETITORS.snapchat.slice(0, 4).map((comp, i) => ({
+        brand: comp.name,
         side: 'competitor',
         format: 'video',
         region: 'GCC',
-        headline: ad.title || 'Snap Ad',
-        copy: ad.body || '',
-        hookText: ad.headline || '',
-        roas: Math.random() * 3 + 2,
-        cpaUsd: Math.random() * 25 + 15,
-        hookRate: Math.random() * 100,
-        spendUsd: Math.random() * 3000 + 500,
+        headline: `${comp.name} Story Ad`,
+        copy: `Tap to discover ${comp.name}`,
+        hookText: `${comp.name} exclusive offer`,
+        roas: (Math.random() * 3 + 2).toFixed(1),
+        cpaUsd: (Math.random() * 25 + 15).toFixed(0),
+        hookRate: Math.floor(Math.random() * 100),
+        spendUsd: Math.floor(Math.random() * 3000 + 500),
         activeDays: Math.floor(Math.random() * 60 + 7),
         taxonomy: ['video', 'mobile', 'story'],
-        insight: 'Mobile-first creative',
-        thumbnailUrl: ad.preview_image,
-        videoUrl: ad.video_url,
+        insight: 'Sample Snapchat story ad',
         mediaType: 'video'
       }))
     };
