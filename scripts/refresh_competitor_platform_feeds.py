@@ -73,7 +73,18 @@ def normalize_refresh_payload(platform: str, payload: dict) -> dict:
 
 def load_sources() -> dict:
     if CONFIG_FILE.exists():
-        return json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+        configured = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+        sources = {}
+        for platform, config in PLATFORMS.items():
+            env_value = os.environ.get(f"{platform.upper()}_FEED_URL")
+            configured_value = configured.get(platform)
+            if env_value:
+                sources[platform] = env_value
+            elif isinstance(configured_value, str) and configured_value.startswith("${"):
+                sources[platform] = config["default_source"]
+            else:
+                sources[platform] = configured_value or config["default_source"]
+        return sources
     return {
         platform: os.environ.get(f"{platform.upper()}_FEED_URL", config["default_source"])
         for platform, config in PLATFORMS.items()

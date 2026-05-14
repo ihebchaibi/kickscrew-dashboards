@@ -31,7 +31,8 @@
     brand: "",
     region: "",
     taxonomy: "",
-    sourceState: "embedded"
+    sourceState: "archive",
+    sourceDetail: ""
   };
 
   const platformConfig = {
@@ -42,7 +43,7 @@
       dataUrl: ".netlify/functions/refresh-competitor-feeds?platform=tiktok",
       refreshUrl: ".netlify/functions/refresh-competitor-feeds?platform=tiktok",
       fallbackUrl: "data/raw/tiktok-ads-library-export.json",
-      status: "connected"
+      status: "needs-source"
     },
     meta: {
       label: "Meta",
@@ -51,7 +52,7 @@
       dataUrl: ".netlify/functions/refresh-competitor-feeds?platform=meta",
       refreshUrl: ".netlify/functions/refresh-competitor-feeds?platform=meta",
       fallbackUrl: "data/raw/meta-ads-library-export.json",
-      status: "connected"
+      status: "needs-source"
     },
     google: {
       label: "Google",
@@ -60,7 +61,7 @@
       dataUrl: ".netlify/functions/refresh-competitor-feeds?platform=google",
       refreshUrl: ".netlify/functions/refresh-competitor-feeds?platform=google",
       fallbackUrl: "data/raw/google-ads-library-export.json",
-      status: "connected"
+      status: "needs-source"
     },
     snapchat: {
       label: "Snapchat",
@@ -69,7 +70,7 @@
       dataUrl: ".netlify/functions/refresh-competitor-feeds?platform=snapchat",
       refreshUrl: ".netlify/functions/refresh-competitor-feeds?platform=snapchat",
       fallbackUrl: "data/raw/snapchat-ads-library-export.json",
-      status: "connected"
+      status: "needs-source"
     }
   };
 
@@ -82,6 +83,14 @@
       maximumFractionDigits: digits,
       minimumFractionDigits: digits
     });
+  }
+
+  function fmtMetric(value, formatter, fallback = "Not available") {
+    return value == null || Number.isNaN(Number(value)) ? fallback : formatter(value);
+  }
+
+  function hasTrustedPerformance() {
+    return state.sourceState === "live-feed" || data.meta?.dataQuality === "verified";
   }
 
   function esc(value) {
@@ -127,16 +136,33 @@
       headline: item.headline || item.title || item.adName || item.adText || "Untitled ad",
       copy: item.copy || item.description || item.body || item.primaryText || "",
       hookText: item.hookText || item.hook || item.primaryText || item.copy || "",
-      roas: Number(item.roas || item.roasValue || item.roasScore || 0),
-      cpaUsd: Number(item.cpaUsd || item.cpa || item.costPerResult || 0),
-      hookRate: Number(item.hookRate || item.engagementRate || item.videoViewRate || 0),
-      spendUsd: Number(item.spendUsd || item.spend || item.totalSpend || 0),
-      activeDays: Number(item.activeDays || item.daysLive || item.durationDays || 0),
+      roas: item.roas ?? item.roasValue ?? item.roasScore ?? null,
+      cpaUsd: item.cpaUsd ?? item.cpa ?? item.costPerResult ?? null,
+      hookRate: item.hookRate ?? item.engagementRate ?? item.videoViewRate ?? null,
+      spendUsd: item.spendUsd ?? item.spend ?? item.totalSpend ?? null,
+      activeDays: item.activeDays ?? item.daysLive ?? item.durationDays ?? null,
       taxonomy,
       insight: item.insight || item.notes || item.commentary || "",
       thumbnailUrl,
       videoUrl,
       mediaType
+    };
+  }
+
+  function extractFeed(payload) {
+    const platformKey = state.platform;
+    const nested = payload?.data?.[platformKey] || payload?.[platformKey] || payload;
+    const creatives = Array.isArray(nested?.creatives)
+      ? nested.creatives
+      : Array.isArray(payload?.creatives)
+        ? payload.creatives
+        : [];
+    return {
+      ...nested,
+      creatives,
+      meta: nested?.meta || payload?.meta || {},
+      isLive: Boolean(nested?.isLive || payload?.isLive || payload?.cacheStatus === "live"),
+      source: nested?.source || payload?.source || nested?.meta?.source || ""
     };
   }
 
@@ -182,11 +208,13 @@
         hooks: 0
       };
       current.count += 1;
-      current.spend += item.spendUsd;
-      current.roasSpend += item.roas * item.spendUsd;
-      current.cpaSpend += item.cpaUsd * item.spendUsd;
-      current.hookRate += item.hookRate;
-      current.hooks += 1;
+      current.spend += Number(item.spendUsd || 0);
+      current.roasSpend += Number(item.roas || 0) * Number(item.spendUsd || 0);
+      current.cpaSpend += Number(item.cpaUsd || 0) * Number(item.spendUsd || 0);
+      if (item.hookRate != null) {
+        current.hookRate += Number(item.hookRate);
+        current.hooks += 1;
+      }
       byBrand.set(item.brand, current);
     });
     return [...byBrand.values()].map((item) => ({
@@ -205,22 +233,22 @@
     const platform = currentPlatformConfig();
     const sourceText =
       state.sourceState === "live-feed"
-        ? `✓ Live feed loaded from ${platform.source}.`
+        ? `Live creative rows loaded from ${state.sourceDetail || platform.source}.`
         : state.sourceState === "live-kpi"
-          ? `✓ KPI snapshot refreshed from ${platform.source}.`
+          ? "Live KPI snapshot refreshed. Row-level creative metrics still need a verified feed."
           : state.sourceState === "refreshing"
             ? `Refreshing ${platform.label} data...`
-            : `⚠ Using cached ${platform.label} sample (live source unavailable).`;
+            : `No verified live ${platform.label} row feed is connected yet. Showing archived structure without trusted performance numbers.`;
     $("#statusLine").innerHTML = `
       <strong>${platform.badge}</strong>
-      <span>${esc(sourceText)} ${live ? `Pulled ${esc(live.pulledAt)}.` : ""}</span>
+      <span>${esc(sourceText)} ${live ? `Last KPI pull: ${esc(live.pulledAt)}.` : ""}</span>
     `;
     const legend = $("#platformLegend");
     if (legend) {
       legend.innerHTML = Object.entries(platformConfig)
         .map(([key, item]) => {
           const active = key === state.platform ? " active" : "";
-          const statusText = state.sourceState === "live-feed" && key === state.platform ? "live" : "connected";
+          const statusText = state.sourceState === "live-feed" && key === state.platform ? "live rows" : "source needed";
           return `<span class="platform-chip${active}">${esc(item.label)} · ${esc(statusText)}</span>`;
         })
         .join("");
@@ -233,12 +261,12 @@
       if (label) {
         label.textContent =
           state.sourceState === "live-feed"
-            ? `${platform.label} live feed`
+            ? `${platform.label} live rows`
             : state.sourceState === "live-kpi"
-              ? "Live KPI snapshot"
+              ? "Live KPI only"
               : state.sourceState === "refreshing"
                 ? "Refreshing..."
-                : `${platform.label} (cached)`;
+                : `${platform.label} source needed`;
       }
     }
   }
@@ -246,15 +274,19 @@
   function renderMetrics(rows) {
     const own = rows.filter((item) => item.side === "own");
     const competitors = rows.filter((item) => item.side === "competitor");
-    const spend = rows.reduce((sum, item) => sum + item.spendUsd, 0);
-    const avgRoas = rows.reduce((sum, item) => sum + item.roas * item.spendUsd, 0) / Math.max(spend, 1);
-    const avgHook = rows.reduce((sum, item) => sum + item.hookRate, 0) / Math.max(rows.length, 1);
+    const trusted = hasTrustedPerformance();
+    const rowsWithSpend = rows.filter((item) => item.spendUsd != null);
+    const spend = rowsWithSpend.reduce((sum, item) => sum + Number(item.spendUsd || 0), 0);
+    const avgRoas = rowsWithSpend.reduce((sum, item) => sum + Number(item.roas || 0) * Number(item.spendUsd || 0), 0) / Math.max(spend, 1);
+    const rowsWithHook = rows.filter((item) => item.hookRate != null);
+    const avgHook = rowsWithHook.reduce((sum, item) => sum + Number(item.hookRate || 0), 0) / Math.max(rowsWithHook.length, 1);
+    const brandCount = new Set(rows.map((item) => item.brand)).size;
     const cards = [
       ["KC benchmark rows", own.length, "Non-live KC reference set"],
       ["Competitor rows", competitors.length, "Tracked external ads"],
-      ["Est. spend", fmtMoney(spend), "Row-level sample spend"],
-      ["Avg ROAS", `${fmtNumber(avgRoas, 1)}x`, "Weighted by spend"],
-      ["Avg hook rate", `${fmtNumber(avgHook, 0)}%`, "First 3 seconds"]
+      ["Brands visible", brandCount, "Current filter set"],
+      ["Spend", trusted ? fmtMetric(spend, fmtMoney) : "Needs source", trusted ? "Verified row-level spend" : "Not shown from sample data"],
+      ["ROAS / hook", trusted ? `${fmtNumber(avgRoas, 1)}x / ${fmtNumber(avgHook, 0)}%` : "Needs source", trusted ? "Weighted by spend / first 3 seconds" : "No random performance numbers"]
     ];
     $("#metricGrid").innerHTML = cards
       .map(
@@ -282,7 +314,7 @@
           ? `<div class="creative-thumb"><img src="${esc(item.thumbnailUrl)}" alt="${esc(item.headline)}"></div>`
           : item.videoUrl
             ? `<div class="creative-thumb"><video src="${esc(item.videoUrl)}" muted playsinline preload="metadata"></video></div>`
-            : `<div class="creative-thumb-fallback">${esc(item.brand)} creative<br><span style="font-weight:600;opacity:.85">No image URL in source yet</span></div>`;
+            : `<div class="creative-thumb-fallback">${esc(item.brand)} creative<br><span style="font-weight:600;opacity:.85">Media asset pending from source</span></div>`;
         return `
         <article class="creative-card" style="--brand-a:${a};--brand-b:${b}">
           <div class="${mediaClass}">
@@ -300,14 +332,14 @@
             <p>${esc(item.copy)}</p>
             <p><strong>Hook:</strong> ${esc(item.hookText)}</p>
             <div class="creative-meta">
-              <span>${fmtMoney(item.spendUsd)} spend</span>
-              <span>${fmtNumber(item.activeDays)} days live</span>
+              <span>${hasTrustedPerformance() ? fmtMetric(item.spendUsd, (value) => `${fmtMoney(value)} spend`) : "Spend not verified"}</span>
+              <span>${fmtMetric(item.activeDays, (value) => `${fmtNumber(value)} days live`, "Dates unavailable")}</span>
               <span>${esc(item.region)}</span>
             </div>
             <div class="stats-line">
-              <div class="stat-box"><span class="mini-label">ROAS</span><strong>${fmtNumber(item.roas, 1)}x</strong></div>
-              <div class="stat-box"><span class="mini-label">CPA</span><strong>${fmtMoney(item.cpaUsd)}</strong></div>
-              <div class="stat-box"><span class="mini-label">Hook</span><strong>${fmtNumber(item.hookRate)}%</strong></div>
+              <div class="stat-box"><span class="mini-label">ROAS</span><strong>${hasTrustedPerformance() ? fmtMetric(item.roas, (value) => `${fmtNumber(value, 1)}x`) : "Needs source"}</strong></div>
+              <div class="stat-box"><span class="mini-label">CPA</span><strong>${hasTrustedPerformance() ? fmtMetric(item.cpaUsd, fmtMoney) : "Needs source"}</strong></div>
+              <div class="stat-box"><span class="mini-label">Hook</span><strong>${hasTrustedPerformance() ? fmtMetric(item.hookRate, (value) => `${fmtNumber(value)}%`) : "Needs source"}</strong></div>
             </div>
             <p>${esc(item.insight)}</p>
             <div class="tags">${item.taxonomy.slice(0, 6).map((tag) => `<span class="tag">${esc(tag)}</span>`).join("")}</div>
@@ -326,10 +358,10 @@
       <tr>
         <td><strong>${esc(item.brand)}</strong><span class="pill ${item.side}">${item.side === "own" ? "Benchmark" : "Competitor"}</span></td>
         <td>${item.count}</td>
-        <td>${fmtMoney(item.spend)}</td>
-        <td>${fmtNumber(item.avgRoas, 1)}x</td>
-        <td>${fmtMoney(item.avgCpa)}</td>
-        <td>${fmtNumber(item.avgHookRate)}%</td>
+        <td>${hasTrustedPerformance() ? fmtMoney(item.spend) : "Needs source"}</td>
+        <td>${hasTrustedPerformance() ? `${fmtNumber(item.avgRoas, 1)}x` : "Needs source"}</td>
+        <td>${hasTrustedPerformance() ? fmtMoney(item.avgCpa) : "Needs source"}</td>
+        <td>${hasTrustedPerformance() ? `${fmtNumber(item.avgHookRate)}%` : "Needs source"}</td>
       </tr>
     `
       )
@@ -342,7 +374,7 @@
       <div class="bar-row">
         <strong>${esc(item.brand)}</strong>
         <div class="bar-track"><div class="bar-fill" style="width:${Math.max((item.avgRoas / max) * 100, 4)}%"></div></div>
-        <span>${fmtNumber(item.avgRoas, 1)}x</span>
+        <span>${hasTrustedPerformance() ? `${fmtNumber(item.avgRoas, 1)}x` : "Needs source"}</span>
       </div>
     `
       )
@@ -350,15 +382,15 @@
   }
 
   function renderHooks(rows) {
-    const videoRows = rows.filter((item) => item.format === "video").sort((a, b) => b.hookRate - a.hookRate);
+    const videoRows = rows.filter((item) => item.format === "video").sort((a, b) => Number(b.hookRate || 0) - Number(a.hookRate || 0));
     $("#hookTable").innerHTML = videoRows
       .map(
         (item) => `
       <tr>
         <td><strong>${esc(item.brand)}</strong>${esc(item.region)}</td>
         <td>${esc(item.hookText)}</td>
-        <td>${fmtNumber(item.hookRate)}%</td>
-        <td>${fmtNumber(item.roas, 1)}x</td>
+        <td>${hasTrustedPerformance() ? fmtMetric(item.hookRate, (value) => `${fmtNumber(value)}%`) : "Needs source"}</td>
+        <td>${hasTrustedPerformance() ? fmtMetric(item.roas, (value) => `${fmtNumber(value, 1)}x`) : "Needs source"}</td>
         <td>${esc(item.taxonomy.find((tag) => data.meta.taxonomy.hookTactic.includes(tag)) || "Unclassified")}</td>
       </tr>
     `
@@ -415,8 +447,8 @@
   function renderRegional(rows) {
     const regions = data.meta.trackedRegions.map((region) => {
       const inRegion = rows.filter((item) => item.region === region);
-      const spend = inRegion.reduce((sum, item) => sum + item.spendUsd, 0);
-      const roas = inRegion.reduce((sum, item) => sum + item.roas * item.spendUsd, 0) / Math.max(spend, 1);
+      const spend = inRegion.reduce((sum, item) => sum + Number(item.spendUsd || 0), 0);
+      const roas = inRegion.reduce((sum, item) => sum + Number(item.roas || 0) * Number(item.spendUsd || 0), 0) / Math.max(spend, 1);
       return { region, count: inRegion.length, brands: new Set(inRegion.map((item) => item.brand)).size, spend, roas };
     });
     $("#regionalTable").innerHTML = regions
@@ -426,8 +458,8 @@
         <td><strong>${esc(item.region)}</strong></td>
         <td>${item.count}</td>
         <td>${item.brands}</td>
-        <td>${fmtMoney(item.spend)}</td>
-        <td>${fmtNumber(item.roas, 1)}x</td>
+        <td>${hasTrustedPerformance() ? fmtMoney(item.spend) : "Needs source"}</td>
+        <td>${hasTrustedPerformance() ? `${fmtNumber(item.roas, 1)}x` : "Needs source"}</td>
       </tr>
     `
       )
@@ -466,7 +498,7 @@
     const feed = data.creatives.filter((item) => item && typeof item === "object").map(normalizeCreative);
     if (!feed.length) return false;
     data.creatives = feed.map((item) => ({ ...item, platform: platform.label, sourcePlatform: platform.label }));
-    state.sourceState = "embedded";
+    state.sourceState = "archive";
     return true;
   }
 
@@ -492,11 +524,11 @@
         message: payload.message || payload.latestRefresh?.message || "Dashboard refresh completed",
         metrics
       };
-      state.sourceState = "live-kpi";
+      if (state.sourceState !== "live-feed") state.sourceState = "live-kpi";
       renderStatus();
     } catch (error) {
       console.warn("Auto-refresh skipped:", error);
-      state.sourceState = "embedded";
+      if (state.sourceState !== "live-feed") state.sourceState = "archive";
       renderStatus();
     }
   }
@@ -509,15 +541,16 @@
     try {
       const response = await fetch(platform.dataUrl, { cache: "no-store" });
       if (response.ok) {
-        const payload = await response.json();
-        const rows = Array.isArray(payload.creatives) ? payload.creatives.map(normalizeCreative) : [];
+        const payload = extractFeed(await response.json());
+        const rows = payload.creatives.map(normalizeCreative);
         if (rows.length > 0) {
           data.creatives = rows.map((item) => ({ ...item, platform: platform.label, sourcePlatform: platform.label }));
           if (Array.isArray(payload.intelligence)) data.intelligence = payload.intelligence;
           if (Array.isArray(payload.creativeBriefs)) data.creativeBriefs = payload.creativeBriefs;
           if (Array.isArray(payload.demographicHeatmap)) data.demographicHeatmap = payload.demographicHeatmap;
           if (payload.meta) data.meta = { ...data.meta, ...payload.meta };
-          state.sourceState = "live-feed";
+          state.sourceState = payload.isLive ? "live-feed" : "archive";
+          state.sourceDetail = payload.source || platform.source;
           populateFilters();
           return true;
         }
@@ -526,7 +559,7 @@
       console.warn(`Live feed load failed for ${state.platform}:`, error.message);
     }
 
-    // Fall back to cached sample data
+    // Fall back to archived rows only; never present them as live performance.
     if (platform.fallbackUrl) {
       try {
         const response = await fetch(platform.fallbackUrl, { cache: "no-store" });
@@ -539,7 +572,8 @@
             if (Array.isArray(payload.creativeBriefs)) data.creativeBriefs = payload.creativeBriefs;
             if (Array.isArray(payload.demographicHeatmap)) data.demographicHeatmap = payload.demographicHeatmap;
             if (payload.meta) data.meta = { ...data.meta, ...payload.meta };
-            state.sourceState = "embedded";
+            state.sourceState = "archive";
+            state.sourceDetail = "archived local feed";
             populateFilters();
             return true;
           }
@@ -554,9 +588,10 @@
 
   function bind() {
     $$(".platform-tabs button").forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", async () => {
         state.platform = button.dataset.platform;
         $$(".platform-tabs button").forEach((btn) => btn.classList.toggle("active", btn === button));
+        await tryLoadPlatformFeed();
         render();
       });
     });
@@ -603,7 +638,9 @@
       refreshButton.addEventListener("click", async () => {
         refreshButton.disabled = true;
         refreshButton.textContent = "Refreshing...";
-        await refreshLiveSnapshot();
+        await tryLoadPlatformFeed();
+        if (state.sourceState !== "live-feed") await refreshLiveSnapshot();
+        render();
         refreshButton.textContent = "Refresh now";
         refreshButton.disabled = false;
       });
